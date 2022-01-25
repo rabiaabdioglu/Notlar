@@ -1,6 +1,25 @@
 
 ## Tüm Basit C Ornekleri #
-- [Tüm Basit C Ornekleri](#Tüm-Basit-C-Ornekleri)
+- [Asal Sayi](#Asal-Sayi)
+- [İki sayi arasi toplami](#İki-sayi-arasi-toplami)
+- [Girilen sifre kontrolü](#Girilen-sifre-kontrolü)
+- [Continue  break](#Continue-break)
+- [For ve foreach kullanimi](#For-ve-foreach-kullanimi)
+- [ASCII karakterleri](#ASCII-karakterleri)
+- [Büyük harf yapma](#Büyük-harf-yapma)
+- [Dizideki en büyük ve en küçük sayiyi bulma](#Dizideki-en-büyük-ve-en-küçük-sayiyi-bulma)
+- [String içerisinden bir alt string alma](#String-içerisinden-bir-alt-string-alma)
+- [Rastgele sayi türetme](#Rastgele-sayi-türetme)
+- [String içerisinde char karakter arama](#String-içerisinde-char-karakter-arama)
+- [Girilen stringte sesli harf sayisini bulma](#Girilen-stringte-sesli-harf-sayisini-bulma)
+- [ArrayList](#ArrayList)
+- [Sayisal Loto Ornek](#Sayisal-Loto-Ornek)
+- [Fonksiyonlar](#Fonksiyonlar)
+- [Overloading ve Params](#Overloading-ve-Params)
+- [Math sınıfı](#Math-sınıfı)
+- [String sınıfı](#String-sınıfı)
+- [Nesne oluşturma](#Nesne-oluşturma)
+- [Get Set](#Get-Set)
 
 
 

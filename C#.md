@@ -21,15 +21,15 @@
 - [Nesne oluşturma](#Nesne-oluşturma)
 - [Comboboxa veri atma](#Comboboxa-veri-atma)
 - [Dosya İşlemleri](#Dosya-İşlemleri)
-    - [Dosya Oluşturma](###Dosya-Oluşturma)
-    - [Dosya Silme](###Dosya-Silme)
-    - [Dosya var mı kontrolü](###Dosya-var-mı-kontrolü)
-    - [Dosya taşıma](###Dosya-taşıma)
-    - [Dosya listeleme](###Dosya-listeleme)
-    - [Klasör listeleme](###Klasör-listeleme)
-    - [Mantıksal sürücüleri listele](###Mantıksal-sürücüleri-listele)
-    - [Append ile text dosyası üzerine yazma](###Append-ile-text-dosyası-üzerine-yazma)
-    - [Text dosyasını okuma, textboxa yazma](###Text-dosyasını-okuma,-textboxa-yazma)
+    - [Dosya Oluşturma](#Dosya-Oluşturma)
+    - [Dosya Silme](#Dosya-Silme)
+    - [Dosya var mı kontrolü](#Dosya-var-mı-kontrolü)
+    - [Dosya taşıma](#Dosya-taşıma)
+    - [Dosya listeleme](#Dosya-listeleme)
+    - [Klasör listeleme](#Klasör-listeleme)
+    - [Mantıksal sürücüleri listele](#Mantıksal-sürücüleri-listele)
+    - [Append ile text dosyası üzerine yazma](#Append-ile-text-dosyası-üzerine-yazma)
+    - [Text dosyasını okuma, textboxa yazma](#Text-dosyasını-okuma,-textboxa-yazma)
 - [DataTable kullanımı](#DataTable-kullanımı)
 - [DataGridview Otomatik](#DataGridview-Otomatik)
 - [VeriTabanı Bağlantısı](#VeriTabanı-Bağlantısı)
@@ -875,7 +875,7 @@ baglanti.close();
 >>
 
 
-   ### Dosya Oluşturma
+   ## Dosya Oluşturma
                 
  ```
  
@@ -886,7 +886,7 @@ baglanti.close();
        
                        
  ```  
-   ### Dosya Silme 
+   ## Dosya Silme 
  
  ```  
        if (Directory.GetFiles(textBox1.Text).Length != 0 || Directory.GetDirectories(textBox1.Text).Length != 0)
@@ -901,7 +901,7 @@ baglanti.close();
  
  
  ```
-  ### Dosya var mı kontrolü
+  ## Dosya var mı kontrolü
 
 ```
 
@@ -914,14 +914,14 @@ baglanti.close();
                 MessageBox.Show("Yoktur.");
             }
  ```
- ### Dosya taşıma
+ ## Dosya taşıma
 
 ```
 
     Directory.Move(textBox1.Text,textBox2.Text);
 
  ```
- ### Klasör listeleme
+ ## Klasör listeleme
 
 
 ```  
@@ -932,7 +932,7 @@ string[] klasor = Directory.GetDirectories(textBox1.Text);
  
 
  ```
- ### Dosya listeleme
+ ## Dosya listeleme
 
 
 ```  
@@ -954,7 +954,7 @@ string[] klasor = Directory.GetDirectories(textBox1.Text);
  
 
  ```
- ### Mantıksal sürücüleri listele
+ ## Mantıksal sürücüleri listele
 
 
 ```  
@@ -964,7 +964,7 @@ string[] klasor = Directory.GetDirectories(textBox1.Text);
  
 
  ```
- ### Text dosyası oluşturma
+ ## Text dosyası oluşturma
 
 
 ```  
@@ -975,7 +975,7 @@ string[] klasor = Directory.GetDirectories(textBox1.Text);
  
 
  ```
- ### Append ile text dosyası üzerine yazma
+ ## Append ile text dosyası üzerine yazma
 
 
 ```
@@ -993,7 +993,7 @@ string[] klasor = Directory.GetDirectories(textBox1.Text);
  
 
  ```
- ### Text dosyasını okuma, textboxa yazma
+ ## Text dosyasını okuma, textboxa yazma
 
 
 ```

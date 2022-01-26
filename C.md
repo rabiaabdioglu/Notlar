@@ -1,4 +1,4 @@
-## Tüm Basit C Ornekleri #
+##  C Ornekleri #
 - [Tüm Basit C Ornekleri](#Tüm-Basit-C-Ornekleri)
 - [Girilen sayıların toplam ortalama ve sayisi](#Girilen-sayıların-toplam-ortalama-ve-sayisi)
 - [Girilen 10 adet sayının tek ve çift olanlarının adet,ortalama ve toplam](#Girilen-10-adet-sayının-tek-ve-çift-olanlarının-adet,ortalama-ve-toplam)

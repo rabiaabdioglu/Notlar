@@ -1103,13 +1103,9 @@ string[] klasor = Directory.GetDirectories(textBox1.Text);
 ## VeriTabanı Bağlantısı
 
 
-``````  
 
 
-## VeriTabanı Bağlantısı
 
-
-```
 > Source-repos-uygulama-bin-debug içine veritabanı atılır (access)
 > birden fazla tablodan veri çekmek için:
 > 1- içiçe select
@@ -1127,9 +1123,7 @@ string[] klasor = Directory.GetDirectories(textBox1.Text);
 >>  string ad= oku["adi"].toString();     //örnek kullanım
 >>  
 
-
-
->  Örnek - Listeden seçilen kişiye ait bilgileri TextBoxa yazdırma
+ >  Örnek - Listeden seçilen kişiye ait bilgileri TextBoxa yazdırma
   
 ``` 
      baglantı.Open();
@@ -1157,7 +1151,7 @@ string[] klasor = Directory.GetDirectories(textBox1.Text);
 ``` 
 
 
->      Örnek  -  Tc ye göre kişi kaydını silme
+>  Örnek  -  Tc ye göre kişi kaydını silme
 
 
   
@@ -1173,7 +1167,7 @@ baglantı.Open();
 ``` 
 
 
->      Örnek  -  TextBoxlardaki veriyle kişi kaydı ekleme
+>   Örnek  -  TextBoxlardaki veriyle kişi kaydı ekleme
 
 
   
@@ -1192,11 +1186,3 @@ baglantı.Open();
 
 
             baglantı.Close();
-``` 
-
-
->      Örnek  -  TextBoxlardaki veriyle kişi kaydı ekleme
-
-
-  
-```  

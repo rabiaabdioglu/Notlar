@@ -3,7 +3,7 @@
 - [Sayi Karşilaştirma](#Sayi-Karşilaştirma)
 - [Harf notu hesabı](#Harf-notu-hesabı)
 - [Basit dört işlem](#Basit-dört-işlem)
-- [Sıfırdan girilen sayiya kadar sayilarin toplam, adet ve ortalamasi](#Sıfırdan-girilen-sayiya-kadar-sayilarin-toplam,-adet-ve-ortalamasi)
+- [Sıfırdan girilen sayiya kadar sayilarin toplam, adet ve ortalamasi](#Sıfırdan-girilen-sayiya-kadar-sayilarin-toplam-adet-ve-ortalamasi)
 - [Faktoriyel bulma](#Faktoriyel-bulma)
 - [Girilen sayilarin toplami](#Girilen-sayilarin-toplami)
 - [Negatif değer girilene kadar değer alma](#Negatif-değer-girilene-kadar-değer-alma)
@@ -126,7 +126,7 @@ setlocale(LC_ALL, "Turkish");
 
 ```
 
-## Sıfırdan girilen sayiya kadar sayilarin toplam, adet ve ortalamasi  
+## Sıfırdan girilen sayiya kadar sayilarin toplam adet ve ortalamasi  
 
 ```
 

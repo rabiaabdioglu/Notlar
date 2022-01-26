@@ -1,5 +1,5 @@
 
-## Tüm Basit C Ornekleri #
+## Basit C Ornekleri #
 - [Asal Sayi](#Asal-Sayi)
 - [İki sayi arasi toplami](#İki-sayi-arasi-toplami)
 - [Girilen sifre kontrolü](#Girilen-sifre-kontrolü)

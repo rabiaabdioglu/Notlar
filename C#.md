@@ -20,6 +20,10 @@
 - [String sınıfı](#String-sınıfı)
 - [Nesne oluşturma](#Nesne-oluşturma)
 - [Get Set](#Get-Set)
+- [Get Set](#Get-Set)
+- [Get Set](#Get-Set)
+- [Get Set](#Get-Set)
+- [Get Set](#Get-Set)
 
 
 
@@ -826,9 +830,364 @@ noktalama varmı bakar
         }
 
     }
+```
 
 
+## Comboboxa veri atma
+
+
+                
+ ```
+      baglanti.open();
+
+      oledbcommand combo_ekle =new oledbcommand
+      ("select ders_adi from tbl_ders",baglan);
+      
+      oledbdatareader combo_oku_combo_ekle.executereader();
+
+      while(comb_oku.raed())
+      {
+      combobox1.ıtems.add(combo_oku["dera_adi"].tostring());
+
+      }
+
+
+baglanti.close();      
+
+
+ ```
+
+
+## Dosya İşlemleri
+
+
+>> programlamada ters / farklı anlamı var bu yüzden dosya adresinde ters/ hata verir.
+>> üç yöntem var  :  1. çift  \\    -     2. düz /    -    3. string başına  @""      -->  özel karakter yok demek
+>>
+
+
+  >>Dosya Oluşturma
+                
+ ```
+ 
+  Directory.CreateDirectory("C:/Users//OneDrive/Masaüstü");  
+  
+  Directory.CreateDirectory(textBox1.Text);               //  -- textbox1 dosya yoludur
+
+       
+                       
+ ```  
+ >>Dosya Silme 
+ 
+ ```  
+       if (Directory.GetFiles(textBox1.Text).Length != 0 || Directory.GetDirectories(textBox1.Text).Length != 0)
+            {
+                if (MessageBox.Show("Klasör dolu\nSilinsin mi ?", "Emin Misin?", MessageBoxButtons.YesNo) == DialogResult.OK)
+                {
+                    Directory.Delete(textBox1.Text, true);
+                    // true herhangi bir alt klasör varsa silmeye izin verir
+                }
+                else { MessageBox.Show("Klasör Silinmedi."); }
+            }                           
+ 
+ 
+ ```
+ >> Dosya var mı kontrolü
+
+```
+
+     if (Directory.Exists(textBox1.Text)) {
+                MessageBox.Show("Vardır.");
+
+            }
+            else
+            {
+                MessageBox.Show("Yoktur.");
+            }
+ ```
+ >> Dosya taşıma
+
+```
+
+    Directory.Move(textBox1.Text,textBox2.Text);
+
+ ```
+ >> Klasör listeleme
+
+
+```  
+
+string[] klasor = Directory.GetDirectories(textBox1.Text);
+            listBox1.Items.AddRange(klasor);
+
+ 
+
+ ```
+ >> Dosya listeleme
+
+
+```  
+        listBox2.Items.Clear();
+          try        //işlemde hata riski varsa dener. hata alınca geri çeker.
+          {
+                    //listBox2.Items.AddRange( Directory.GetFiles(listBox1.SelectedItem.ToString()));
+                    //addrange ile  list 1 dek itüm klasötlerin içindeki dosyaları list 2 ye alır 
+
+                string[] dosyalar = Directory.GetFiles(listBox1.SelectedItem.ToString());
+                listBox2.Items.AddRange(dosyalar);
+          }
+          catch (Exception)
+          {
+                 MessageBox.Show("ERROR.");
+                 // hata anında programın kapanmasını engeller exceptionı yakalar geri çeker 
+          }
+
+ 
+
+ ```
+ >> Mantıksal sürücüleri listele
+
+
+```  
+  
+  listBox1.Items.AddRange(  Directory.GetLogicalDrives());  
+  
+ 
+
+ ```
+ >> Text dosyası oluşturma
+
+
+```  
+     TextWriter yaz= File.CreateText(textBox1.Text);
+     yaz.WriteLine(richTextBox1.Text);
+     yaz.Close();
+
+ 
+
+ ```
+ >> Append ile text dosyası üzerine yazma
+
+
+```
+          //yazma iki farklı yöntemle yapılır
+          //1-- append            kelime anlamı ucuca ekle - böyle dosya yoksa oluştur , varsa sonuna ekle.
+          //2-- create text       yoksa oluştur  varsa siler ve yeni oluştur   
+          
+          
+            TextWriter yaz = File.AppendText(saveFileDialog1.FileName);
+            yaz.WriteLine(richTextBox1);
+            yaz.Close();
+
+
+
+ 
+
+ ```
+ >> Text dosyasını okuma, textboxa yazma
+
+
+```
+
+          //readtoend en baştan ensona tek string olarak okur
+          //read line satır satır okur.
+          //TextReader oku = File.OpenText(textBox1.Text);
+          //büyük textlerde bu yapılamaz anabelleğe alınmaz
+
+
+          if (openFileDialog1.ShowDialog() == DialogResult.OK)
+          {
+              TextReader oku = File.OpenText(openFileDialog1.FileName);
+              string satır = oku.ReadLine();
+
+              while (satır != null)
+              {
+                  richTextBox1.Text += satır + "\n";
+                  satır = oku.ReadLine();
+              }
+              // richTextBox1.Text = oku.ReadToEnd();     //okuduğunu richboxa yazar
+              oku.Close();
+          }
+
+
+```  
+
+
+## DataTable kullanımı
+
+>>    public classtan sonra tanımlanır.
+>>    
+>>    OleDbConnection bağlantı = new OleDbConnection("Provider=Microsoft.Ace.OleDb.12.0; Data source=takip.accdb");
+>>    DataTable veritablosu = new DataTable();    
+
+
+
+>>>>  Form1_Load  program başladığında ilk ayarlar yapılır
+
+```
+
+
+            bağlantı.Open();
+            OleDbCommand komut = new OleDbCommand("select * from çalışanlar",bağlantı);
+            OleDbDataReader okuyucu = komut.ExecuteReader();
+
+            //listbox a çalışan kişilerin isimleri atılır.
+            
+            while (okuyucu.Read())            {                listBox1.Items.Add(okuyucu[1].ToString());            }
+
+            bağlantı.Close();
+
+            //Veri tablosu sütunları eklenir
+            
+            veritablosu.Columns.Add("Kişi ID");            veritablosu.Columns.Add("Kişi İsim");
+            veritablosu.Columns.Add("Kişi Soyisim");            veritablosu.Columns.Add("Kişi Meslek");
+            veritablosu.Columns.Add("Kişi Kurum TEL");            veritablosu.Columns.Add("Kişi CEP No");
+            
+```  
+
+>>>>Listboxtan seçilen kişiyi DataGridviewe atma
+
+``` 
+      if (listBox1.SelectedIndex!=-1)
+            {
+                bağlantı.Open();
+                OleDbCommand komut = new OleDbCommand("select * from çalışanlar where adı='" + listBox1.SelectedItem.ToString() + "'", bağlantı);
+                OleDbDataReader okuyucu = komut.ExecuteReader();
+                
+                DataRow satır = veritablosu.NewRow();     
+                
+                while (okuyucu.Read())
+                {
+                    satır[0] = okuyucu[0].ToString(); satır[1] = okuyucu[1].ToString();
+                    satır[2] = okuyucu[2].ToString(); satır[3] = okuyucu[3].ToString();
+                    satır[4] = okuyucu[4].ToString(); satır[5] = okuyucu[5].ToString();
+                    
+                    
+                    veritablosu.Rows.Add(satır);                   // Satırı veri tablosuna  ekleme
+                }
+                dataGridView1.DataSource = veritablosu; bağlantı.Close();
+               
+                listBox1.Items.Remove(listBox1.SelectedItem); }    //Veri tablosuna atılan kişinin adını listboxtan silme
+
+      else
+                MessageBox.Show("Önce Kişi Seçin");
+
+```
+## DataGridview Otomatik
+
+
+>> datagridview oluştur. Sağ üstüne tıkla ve veri kaynağı seç 
+>> veritabanı > accsess > gözat       (veritabanı dosya seç > tablo seç )
+
+>> DataGridView özellikler > event > cellcontent      (hücre için tıklama ile dataGridView1_CellContentClick oluşturulur)
+
+
+```
+   //otomatik ekleme butonu
+   
+ this.çalışanlarTableAdapter.Fill(this._takip___KopyaDataSet.çalışanlar);
+
+
+```  
+
+
+## VeriTabanı Bağlantısı
+
+
+``````  
+
+
+## VeriTabanı Bağlantısı
+
+
+```
+> Source-repos-uygulama-bin-debug içine veritabanı atılır (access)
+> birden fazla tablodan veri çekmek için:
+> 1- içiçe select
+> 2-innerjoin 
+
+>> Adımlar:
+>>
+>>  1- system.data.oledb
+>>  2-OledbConnection baglanti =new oledbConnection("provider=microsoft.ace.oledb.12.0;data.source=veritabanıadı.accdb");
+>>  3-baglanti.open();    //açılan bağlantı kapatılmalı -> close();
+>>  4- OledbCommand komut=new OLedbCommand( ---select komutu--- select * from kisi,baglanti);
+>>  5-OledbReader oku=komut.executeReader();
+>>  6- while(oku.read())                  //sorgu sonucu verileri satır satır okur
+>>  
+>>  string ad= oku["adi"].toString();     //örnek kullanım
+>>  
+
+
+
+>  Örnek - Listeden seçilen kişiye ait bilgileri TextBoxa yazdırma
+  
+``` 
+     baglantı.Open();
+            OleDbCommand list_oku = new OleDbCommand("select * from kişi where adı = '"+listBox1.SelectedItem.ToString()+"' ",baglantı);
+            OleDbDataReader okuyucu = list_oku.ExecuteReader();
+
+            okuyucu.Read();
+            
+            // farklı kullanımlar 
+            
+            txttc.Text = okuyucu.GetValue(0).ToString();
+            txtad.Text = okuyucu["isim"].ToString();
+            txtsa.Text = okuyucu[2].ToString();
+            txtdt.Text = okuyucu[3].ToString();
+            txtdy.Text = okuyucu[4].ToString();
+            txttel.Text = okuyucu[5].ToString();
+            txtmail.Text = okuyucu[6].ToString();
+            baglantı.Close();
     
     
     
-    
+
+
+  
+``` 
+
+
+>      Örnek  -  Tc ye göre kişi kaydını silme
+
+
+  
+```  
+
+baglantı.Open();
+            OleDbCommand sil_komutu = new OleDbCommand("delete from kişi where tc="+txttc.Text,baglantı);
+            if (sil_komutu.ExecuteNonQuery() != 0)      // Eylem Sorguları ile çalışır (Ekle, Güncelle, Sil vb..).  Dönüş türü int
+                MessageBox.Show("Kişi Silindi");
+            else
+                MessageBox.Show("Silinemedi");
+            baglantı.Close();  
+``` 
+
+
+>      Örnek  -  TextBoxlardaki veriyle kişi kaydı ekleme
+
+
+  
+```   baglantı.Open();
+            OleDbCommand ekle = new OleDbCommand();
+            ekle.Connection = baglantı;
+            ekle.CommandText = "insert into kişi (tc,adı,soyadı,doğum_tarihi,doğum_yeri,tel_no,email) values (@tc,@adı,@soyadı,@doğum_tarihi,@doğum_yeri,@tel_no,@email)";
+            ekle.Parameters.AddWithValue("@tc",txttc.Text);
+            ekle.Parameters.AddWithValue("@adı",txtad.Text);
+            ekle.Parameters.AddWithValue("@soyadı", txtsa.Text);
+            ekle.Parameters.AddWithValue("@doğum_tarihi", txtdt.Text);
+            ekle.Parameters.AddWithValue("@doğum_yeri", txtdy.Text);
+            ekle.Parameters.AddWithValue("@tel_no", txttel.Text);
+            ekle.Parameters.AddWithValue("@email", txtmail.Text);
+            ekle.ExecuteNonQuery();
+
+
+            baglantı.Close();
+``` 
+
+
+>      Örnek  -  TextBoxlardaki veriyle kişi kaydı ekleme
+
+
+  
+```  

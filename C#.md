@@ -1118,20 +1118,20 @@ string[] klasor = Directory.GetDirectories(textBox1.Text);
 
 >>       Adımlar:
 >>
->>  1- system.data.oledb
+>>      1- system.data.oledb
 >>  
->>  2-OledbConnection baglanti =new oledbConnection("provider=microsoft.ace.oledb.12.0;data.source=veritabanıadı.accdb");
+>>      2-OledbConnection baglanti =new oledbConnection("provider=microsoft.ace.oledb.12.0;data.source=veritabanıadı.accdb");
 >>  
->>  3-baglanti.open();                    //açılan bağlantı kapatılmalı -> close();
+>>      3-baglanti.open();                    //açılan bağlantı kapatılmalı -> close();
 >>  
->>  4- OledbCommand komut=new OLedbCommand( ---select komutu--- select * from kisi,baglanti);
+>>      4- OledbCommand komut=new OLedbCommand( ---select komutu--- select * from kisi,baglanti);
 >>  
->>  5-OledbReader oku=komut.executeReader();
+>>      5-OledbReader oku=komut.executeReader();
 >>  
->>  6- while(oku.read())                  //sorgu sonucu verileri satır satır okur
+>>      6- while(oku.read())                  //sorgu sonucu verileri satır satır okur
 >>  
 >>  
->>  string ad= oku["adi"].toString();     //örnek kullanım
+>>     string ad= oku["adi"].toString();     //örnek kullanım
 
 >>
 >>

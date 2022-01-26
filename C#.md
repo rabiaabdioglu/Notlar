@@ -1108,20 +1108,35 @@ string[] klasor = Directory.GetDirectories(textBox1.Text);
 
 > Source-repos-uygulama-bin-debug içine veritabanı atılır (access)
 > birden fazla tablodan veri çekmek için:
+> 
 > 1- içiçe select
+> 
 > 2-innerjoin 
+> 
 
->> Adımlar:
+
+
+>>       Adımlar:
 >>
 >>  1- system.data.oledb
+>>  
 >>  2-OledbConnection baglanti =new oledbConnection("provider=microsoft.ace.oledb.12.0;data.source=veritabanıadı.accdb");
->>  3-baglanti.open();    //açılan bağlantı kapatılmalı -> close();
+>>  
+>>  3-baglanti.open();                    //açılan bağlantı kapatılmalı -> close();
+>>  
 >>  4- OledbCommand komut=new OLedbCommand( ---select komutu--- select * from kisi,baglanti);
+>>  
 >>  5-OledbReader oku=komut.executeReader();
+>>  
 >>  6- while(oku.read())                  //sorgu sonucu verileri satır satır okur
+>>  
 >>  
 >>  string ad= oku["adi"].toString();     //örnek kullanım
 >>  
+
+
+
+
 
  >  Örnek - Listeden seçilen kişiye ait bilgileri TextBoxa yazdırma
   
@@ -1157,13 +1172,13 @@ string[] klasor = Directory.GetDirectories(textBox1.Text);
   
 ```  
 
-baglantı.Open();
-            OleDbCommand sil_komutu = new OleDbCommand("delete from kişi where tc="+txttc.Text,baglantı);
-            if (sil_komutu.ExecuteNonQuery() != 0)      // Eylem Sorguları ile çalışır (Ekle, Güncelle, Sil vb..).  Dönüş türü int
-                MessageBox.Show("Kişi Silindi");
-            else
-                MessageBox.Show("Silinemedi");
-            baglantı.Close();  
+        baglantı.Open();
+        OleDbCommand sil_komutu = new OleDbCommand("delete from kişi where tc="+txttc.Text,baglantı);
+        if (sil_komutu.ExecuteNonQuery() != 0)      // Eylem Sorguları ile çalışır (Ekle, Güncelle, Sil vb..).  Dönüş türü int
+            MessageBox.Show("Kişi Silindi");
+        else
+            MessageBox.Show("Silinemedi");
+        baglantı.Close();  
 ``` 
 
 
@@ -1171,18 +1186,22 @@ baglantı.Open();
 
 
   
-```   baglantı.Open();
-            OleDbCommand ekle = new OleDbCommand();
-            ekle.Connection = baglantı;
-            ekle.CommandText = "insert into kişi (tc,adı,soyadı,doğum_tarihi,doğum_yeri,tel_no,email) values (@tc,@adı,@soyadı,@doğum_tarihi,@doğum_yeri,@tel_no,@email)";
-            ekle.Parameters.AddWithValue("@tc",txttc.Text);
-            ekle.Parameters.AddWithValue("@adı",txtad.Text);
-            ekle.Parameters.AddWithValue("@soyadı", txtsa.Text);
-            ekle.Parameters.AddWithValue("@doğum_tarihi", txtdt.Text);
-            ekle.Parameters.AddWithValue("@doğum_yeri", txtdy.Text);
-            ekle.Parameters.AddWithValue("@tel_no", txttel.Text);
-            ekle.Parameters.AddWithValue("@email", txtmail.Text);
-            ekle.ExecuteNonQuery();
+```     
+        baglantı.Open();
+
+        OleDbCommand ekle = new OleDbCommand();
+        ekle.Connection = baglantı;
+        ekle.CommandText = "insert into kişi (tc,adı,soyadı,doğum_tarihi,doğum_yeri,tel_no,email) 
+        values (@tc,@adı,@soyadı,@doğum_tarihi,@doğum_yeri,@tel_no,@email)";
+        
+        ekle.Parameters.AddWithValue("@tc",txttc.Text);
+        ekle.Parameters.AddWithValue("@adı",txtad.Text);
+        ekle.Parameters.AddWithValue("@soyadı", txtsa.Text);
+        ekle.Parameters.AddWithValue("@doğum_tarihi", txtdt.Text);
+        ekle.Parameters.AddWithValue("@doğum_yeri", txtdy.Text);
+        ekle.Parameters.AddWithValue("@tel_no", txttel.Text);
+        ekle.Parameters.AddWithValue("@email", txtmail.Text);
+        ekle.ExecuteNonQuery();
 
 
-            baglantı.Close();
+        baglantı.Close();

@@ -1132,11 +1132,19 @@ string[] klasor = Directory.GetDirectories(textBox1.Text);
 >>  
 >>  
 >>  string ad= oku["adi"].toString();     //örnek kullanım
->>  
 
-
-
-
+>>
+>>
+>>      ExecuteNonQuery ():       Yalnızca Eylem Sorguları ile çalışır (Oluştur, Değiştir, Bırak, Ekle, Güncelle, Sil).
+>>                                Sorgudan etkilenen satır sayısını döndürür.  Dönüş türü int
+>>
+>>      ExecuteReader ():        Sorgu tarafından seçilen satır koleksiyonunu döndürür.       Dönüş türü DataReader'dır.
+>>
+>>      ExecuteScalar ():        Sorgu sonucunun ilk satırını ve ilk sütun değerini döndürür. Dönüş türü nesnedir.
+>>
+>>
+>>
+>>
 
  >  Örnek - Listeden seçilen kişiye ait bilgileri TextBoxa yazdırma
   

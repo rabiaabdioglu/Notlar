@@ -719,8 +719,6 @@ SELECT (case Cinsiyet
 		Yavaşsa index yapılabilir. Zaman tasarrufu yapılır.
 		
 -----
------
------
 
 		
 		Create clustered ındex indexadi	on tabloadi(satır adi)
@@ -767,4 +765,4 @@ SELECT (case Cinsiyet
 
 ```
 
----
+

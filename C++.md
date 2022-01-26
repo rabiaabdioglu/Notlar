@@ -1,19 +1,14 @@
 
 ##  C++ Ornekleri #
 - [Sayi Karşilaştirma](#Sayi-Karşilaştirma)
-- [Harf notu hesabı](#Harf notu hesabı)
-- [Tüm Basit C++ Ornekleri](#Tüm-Basit-C++-Ornekleri)
-- [Tüm Basit C++ Ornekleri](#Tüm-Basit-C++-Ornekleri)
-- [Tüm Basit C++ Ornekleri](#Tüm-Basit-C++-Ornekleri)
-- [Tüm Basit C++ Ornekleri](#Tüm-Basit-C++-Ornekleri)
-- [Tüm Basit C++ Ornekleri](#Tüm-Basit-C++-Ornekleri)
-- [Tüm Basit C++ Ornekleri](#Tüm-Basit-C++-Ornekleri)
-- [Tüm Basit C++ Ornekleri](#Tüm-Basit-C++-Ornekleri)
-- [Tüm Basit C++ Ornekleri](#Tüm-Basit-C++-Ornekleri)
-- [Tüm Basit C++ Ornekleri](#Tüm-Basit-C++-Ornekleri)
-- [Tüm Basit C++ Ornekleri](#Tüm-Basit-C++-Ornekleri)
-- [Tüm Basit C++ Ornekleri](#Tüm-Basit-C++-Ornekleri)
-- [Tüm Basit C++ Ornekleri](#Tüm-Basit-C++-Ornekleri)
+- [Harf notu hesabı](#Harf-notu-hesabı)
+- [Basit dört işlem](#Basit-dört-işlem)
+- [Sıfırdan girilen sayiya kadar sayilarin toplam, adet ve ortalamasi](#Sıfırdan-girilen-sayiya-kadar-sayilarin-toplam,-adet-ve-ortalamasi)
+- [Faktoriyel bulma](#Faktoriyel-bulma)
+- [Girilen sayilarin toplami](#Girilen-sayilarin-toplami)
+- [Negatif değer girilene kadar değer alma](#Negatif-değer-girilene-kadar-değer-alma)
+- [100 e kadar olan asal sayilar](#100-e-kadar-olan-asal-sayilar)
+
 
 
 

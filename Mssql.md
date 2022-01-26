@@ -291,58 +291,443 @@
 ```
 
 SELECT (case Cinsiyet 
-		when 'E' then 'Erkek'
-		when 'K' then 'Kadın' end )as cinsiyet,
-		(case IsGozluk
-		 when 0  then 'Gözlüksüz'
-		 when 1 then 'Gözlüklü' end) as GozlukDurum, from ........
+	when 'E' then 'Erkek'
+	when 'K' then 'Kadın' end )as cinsiyet,
+	(case IsGozluk
+	 when 0  then 'Gözlüksüz'
+	 when 1 then 'Gözlüklü' end) as GozlukDurum, from ........
 
 ```
 
 
-## Not in kullanımı
+## Stored Procedure
 
 
-
-
-```
+>> Procedure oluşturma
 
 ```
 
-
-## Not in kullanımı
-
-
-
-
-```
+	create procedure usp_KategoriListesi
+	as
+	begin
+	select * from tbl_Kategori
+	end
 
 ```
 
+>> Procedure çağırma
 
-## Not in kullanımı
+```
+	exec usp_KategoriListesi
 
-
-
+	--procedurede değişiklik yapmak için ALTER kullanıyoruz.
 
 ```
 
-```
-
-
-## Not in kullanımı
+## Procedure orneği
 
 
 
 
 ```
 
+	Ornek 6 --> Marka adına göre markanın bulunduğu kategorilerin adını procedure 
+
+
+	create procedure sp_Marka
+	
+	@MarkaAdi nvarchar(50)
+	as
+	begin
+
+	select *
+	from tbl_Kategori
+	where Id in(
+		select KategoriId
+		from tbl_AltKategori
+		where Id in(	
+			select AltKategoriId
+			from tbl_Urun
+			where MarkaId in(	
+				select Id 
+				from tbl_Marka
+				where Adi = @MarkaAdi)))
+	end
+
+	exec sp_Marka 'Apple'
 ```
 
 
-## Not in kullanımı
+## Function
 
 
 
 
 ```
+
+	Ornek 7 -> Ad soyadı birleştiren fonksiyon
+	
+	create function Fn_Birlestir(
+	@Adi nvarchar(20),
+	@Soyadi nvarchar(30))
+	returns nvarchar(51)
+	as
+	begin
+		return @Adi + space(1)+ @Soyadi
+	end
+
+	
+	--Fonskiyon kullanımı
+	
+	select dbo.Fn_Birlestir('Tuncay','Tanin') as AdSoyad
+
+```
+
+
+## Function Alter
+
+
+
+
+```
+	Ornek 8 -> Yaş hesaplayan fonksiyon
+
+	--Alter ile fonksiyon güncellenir.
+	
+	alter function Fn_YasHesapla(
+	@Tarih date
+	)
+	returns int
+	as
+	begin
+		  return  DateDiff(MONTH,@Tarih,getdate())	
+	end
+
+
+	select dbo.Fn_YasHesapla('01.07.2000')
+
+
+```
+
+
+## Function -- Tablo döndürme
+
+
+
+
+```
+
+	alter function Fn_KategoridekiUrunler(@KategoriId int, @KategoriAdi nvarchar(50))
+	returns table
+	as
+		return (select ur.Adi, ur.Id as UrunId,
+			ur.MarkaId,ur.Stok,
+			ka.Adi as KategoriAdi, 
+			ak.Adi as AtlKategoriAdi			
+			
+			from tbl_Kategori ka, tbl_AltKategori ak, tbl_Urun ur
+			where ka.Id = ak.KategoriId and
+			ak.Id = ur.AltKategoriId and
+			ka.Id = @KategoriId or ka.Adi = @KategoriAdi)
+
+
+	-- Fonksiyonun döndürdüğü tabloda sorgulama 
+	
+	select * from dbo.Fn_KategoridekiUrunler(0,'Telefon')
+
+
+```
+
+
+## Varolan tablolardan rastgele veri alımı
+
+
+```	
+	Ornek 9 -> Personel tablosu oluşturmak için otomatik random değerler atama
+
+
+	-- insert için değişkenler
+	use Deneme2
+	declare @Adi nvarchar(100)
+	declare @Soyadi nvarchar(100)
+	declare @Cinsiyet char(1)
+	declare @Email nvarchar(200)
+	declare @Sehir nvarchar(50)
+	declare @DogumTarihi date
+	declare @Tckn int
+	set @Tckn = 0
+
+	-- Geçici değişkenlerim
+	declare @Id int
+	declare @YeniID int 
+	set @YeniID= 0
+	declare @Sayac int
+	set @Sayac = 0
+
+		while @Sayac < 300000
+		begin
+			
+			-- isimler tablosunda rastgele isim ve cinsiyet alma
+			set @Id = rand()*12923+1 
+			set @Adi = (select Ad from isimler where Id = @Id)
+			set @Cinsiyet =(select Cinsiyet from isimler where Id = @Id)
+
+			
+			-- soy isimlerden soyadi alalım
+			--select max(Id) from Soyisimler
+			set @Id = rand()*1603+1
+			set @Soyadi = (select Soyadi from Soyisimler where Id = @Id)
+
+			
+			-- sehiri alalım
+			set @Id = rand()*81+1
+			set @Sehir = (select Adi from Sehirler where Id= @Id)
+
+			
+			-- email oluşturma
+			set @Email = trim(@Adi)+'.'+trim(@Soyadi)+'@aydin.edu.tr'
+
+			
+			-- Doğum Tarihi oluşturma
+			set @DogumTarihi = getdate()- (rand()*50*365+(18*365)) -- 18 -68 yaş arasında bir sayı üretti
+
+			
+			set @Id =0
+			--set @Id = (select count(*) from tbl_Personel where Adi = @Adi and Soyadi = @Soyadi )
+			
+			
+			--if else  kullanımı
+			
+			if @Id=0			
+			begin 
+				set @YeniID  = @YeniID + 1 
+				set @Tckn = @YeniID * 1000
+				insert into tbl_Personel(Id,Adi,Soyadi,Cinsiyet,Email,Sehir,DogumTarihi,Tckn)
+				values(@YeniID,@Adi,@Soyadi,@Cinsiyet,@Email,@Sehir,@DogumTarihi,@Tckn)
+				set @Sayac +=1
+			end
+			
+			else
+			begin
+				print(@Adi +' '+@Soyadi+' bu kayıtan dahan önce eklenmiş')
+			end
+			
+		end
+
+```
+
+
+## Transaction
+
+
+
+
+```	
+	Ornek 10 -> Havale isteğini gerçekleştiren trans
+
+	
+	-- Banka Hesap oluşturma
+	
+		create table tbl_Hesap(
+		Id int identity(1,1) primary key,
+		MusteriAdi nvarchar(100) not null,
+		BankAdi nvarchar(50) not null,
+		HesapNo char(5) not null,
+		Bakiye money not null
+		)
+
+		select * from tbl_Hesap
+		begin transaction BankaHesap
+		insert into tbl_Hesap(MusteriAdi,BankAdi,HesapNo,Bakiye)
+		values('Rabia','Abdioğlu','00001',5000),
+			   ('Ali Sa','İş Bankası','00002',3000),
+			   ('Mehmet As','Yapı Kredi','00003',1500)
+
+		select * from tbl_Hesap
+		commit tran BankaHesap
+
+
+
+
+	select * from tbl_Hesap
+	
+	
+	
+	alter proc usp_HavaleYap
+	@GonderenHesap char(5),
+	@AlıcıHesap char(5),
+	@Miktar money
+	as
+	begin
+		declare @HesapVarmi int
+		begin tran HavaleYap
+			(select @HesapVarmi = COUNT(*) 
+							from tbl_Hesap
+							where HesapNo = @GonderenHesap
+									and Bakiye >= @Miktar)
+			if(@HesapVarmi > 0)
+			begin
+				update tbl_Hesap set Bakiye = Bakiye- @Miktar
+				where HesapNo = @GonderenHesap
+
+				select @HesapVarmi = COUNT(*) 
+				from tbl_Hesap
+				where HesapNo = @AlıcıHesap
+
+				if(@HesapVarmi > 0)
+				begin
+					update tbl_Hesap 
+					set Bakiye = Bakiye+@Miktar
+					where HesapNo = @AlıcıHesap
+					commit tran HavaleYap
+				end
+				else
+				begin
+					rollback tran HavaleYap
+				end
+			end
+			else
+			begin
+				commit tran HavaleYap
+			end
+	end
+	
+
+
+
+	
+```
+
+
+## Rollback ve commit 
+
+
+
+
+```	
+	
+	--Ornek 10 için 
+	--Kontrol kodları 
+	
+		select * from tbl_Hesap
+		begin tran IslemYap
+
+			declare @Durum bit
+			exec usp_HavaleYap '00001','00006',5000, @Durum output
+
+			select * from tbl_Hesap
+
+			if(@Durum = 1)
+			begin
+				commit
+			end
+			else
+			begin
+				rollback
+			end
+
+		select @Durum
+		
+		select * from tbl_Hesap
+```
+
+
+## İndex Konusu
+
+
+
+
+
+
+```
+		__clustered ındex yapısında sıralı olduğu için veri hemen bulunabilir
+		sıralı data
+
+		önce tabloda index varmı diye bakar. leaflerin içerisinde data nın adresini bulundurur.
+
+		non-cluster: sıralanmamış index olmayan sıralama 
+		sıralı olmayan data
+		ayrı bir indexli farklı yerde sıra belirtilir.
+		önce içinde index bulunan tabloya bakıp adresini bulur sonra veriyi bulur.
+		leaflerde bilgi yok bilginin (verinin) adresi var
+
+
+		-----
+		sorgu çok kısa sürede geliyorsa data sorun yaratmıyorsa index oluşturmaya gerek kalmaz
+		ama yavaşsa index yapılabilir
+
+		zaman tasarrufu yapılır.
+
+		Create clustered ındex indexadi
+		on tabloadi(satır adi)--bir tabloda bir tane
+
+
+		Create unıque ındex indexadi
+		on tabloadi(satır adi)
+
+		Create non clustered ındex indexadi------sıralı veya unıq değilse
+		on tabloadi(satır adi)---bir tablo için 999 tane
+
+
+		non cluster adına göre sıralar mesela?? id sini tutar
+		yeni kayıt ekleme silmede 
+		olabildiğince indexle sorgu yapılmalı 
+
+
+
+
+
+
+		eğer unıq olmayan veya sıralı olmayan tabloya clusteres yapılırsa hata verir..!1
+
+		ındex ne zaman kullanılımaz
+
+		 her index yaptığında index tablosuna kayıt atılır. bellek azalır ve iş yükü artar
+		eğer sorgu çok fazla kullanılıryorsa ve çok fazla kayıt varsa yapılır.
+
+		istatistik görmek için 
+		set statıstıc ıo on
+		set statıstıc time on.__  
+
+
+
+```
+
+
+## Function -- Tablo döndürme
+
+
+
+
+```
+```
+
+
+## Function -- Tablo döndürme
+
+
+
+
+```
+```
+
+
+## Function -- Tablo döndürme
+
+
+
+
+```
+```
+
+
+## Function -- Tablo döndürme
+
+
+
+
+```
+
+
+
+

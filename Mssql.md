@@ -1,11 +1,29 @@
 ## MSSQL ile veritabanı işlemleri #
 
-- [](#Sayaç)
-- [Sayaç](#Sayaç)
-- [Sayaç](#Sayaç)
-- [Sayaç](#Sayaç)
-- [Sayaç](#Sayaç)
-- [Sayaç](#Sayaç)
+- [Create](#Create)
+- [İnsert](#İnsert)
+- [Select where kullanımı ile tablo birleştirme](#Select-where-kullanımı-ile-tablo-birleştirme)
+- [Not in kullanımı](#Not-in-kullanımı)
+- [Email kontrolü](#Email-kontrolü)
+- [Join kullanımı](#Join-kullanımı)
+- [Sum count Group by](#Sum-count-Group-by)
+- [Convert](#Convert)
+- [İçiçe sorgu](#İçiçe-sorgu)
+- [İçiçe sorgu ile update](#İçiçe-sorgu-ile-update)
+- [Case kullanımı](#Case-kullanımı)
+- [Unıon](#Unıon)
+- [Stored Procedure](#Stored-Procedure)
+- [Procedure çağırma](#Procedure-çağırma)
+- [Procedure orneği](#Procedure-orneği)
+- [Function](#Function)
+- [Function Alter](#Function-Alter)
+- [Function Tablo döndürme](#Function-Tablo-döndürme)
+- [Varolan tablolardan rastgele veri alımı](#Varolan-tablolardan-rastgele-veri-alımı)
+- [Transaction](#Transaction)
+- [Rollback ve commit](#Rollback-ve-commit)
+- [İndex Konusu](#İndex-Konusu)
+
+
 
 
 

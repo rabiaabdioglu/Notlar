@@ -1,5 +1,5 @@
 
-## Basit C# Ornekleri #
+## C# Ornekleri #
 - [Asal Sayi](#Asal-Sayi)
 - [İki sayi arasi toplami](#İki-sayi-arasi-toplami)
 - [Girilen sifre kontrolü](#Girilen-sifre-kontrolü)
@@ -42,7 +42,7 @@
 
 
 
-```
+```c#
   {
           bool asal = false ;
           Console.Write("Sayıyı Girin : ");
@@ -57,13 +57,11 @@
             else Console.WriteLine("Girilen Sayı Asal Değil");
             
  ```
-
-
-## İki sayi arasi toplami
+ ## İki sayi arasi toplami
 
 
 
-```            
+```c#            
              int temp = 0;
             Console.Write("Alt sinir giriniz:");
             int altsinir = Convert.ToInt32(Console.ReadLine());// dönüþüm iþlemi ve kul deðer alma
@@ -85,13 +83,11 @@
             }
             Console.WriteLine("Toplam deger:" + toplam);
   ```
-
-
-## Girilen sifre kontrolü
+  ## Girilen sifre kontrolü
 
 
 
-```               
+```c#               
           int sifre = 1234, sifre2;
             do
             {
@@ -106,13 +102,11 @@
             }
             while (sifre != sifre2);
  ```
-
-
-## Continue  break
+ ## Continue  break
 
 
 
-```      
+```c#      
             for(int i = 0; i < 100; i++)
             {
                 Console.WriteLine(i);
@@ -120,14 +114,12 @@
                 if (i == 50) break;
             }       
 ```
-
-
 ## For ve foreach kullanimi
 
 
 
 
-``` 
+```c# 
              int[] notlar = new int[10];
             int toplam = 0;
             double ort ;
@@ -149,27 +141,23 @@
 
 
  ```
-
-
-## ASCII karakterleri
+ ## ASCII karakterleri
 
 
 
 
-``` 
+```c# 
           for (int i = 0; i <= 122; i++) 
           Console.WriteLine(i + "-" + Convert.ToChar(i) + "-" + Convert.ToChar(i + 32) + "-" + (i + 32));
 
              
 ```
-
-
 ## Büyük harf yapma
 
 
 
 
-``` 
+```c# 
           Console.WriteLine("Bir yazi gir");
           string yazi = Console.ReadLine();
           string cikti = String.Empty; 
@@ -186,14 +174,12 @@
             
                  
 ```
-
-
 ## Dizideki en büyük ve en küçük sayiyi bulma
 
 
 
 
-```         
+```c#         
               int[] dizi = new int[10] { -9, -2, 0, 1, 10, 11, 19, 1, -1, 4 };
             int eb=dizi[0],ek =dizi[0];
             for (int i = 0; i < 10; i++)
@@ -205,14 +191,12 @@
             
             Console.ReadKey();             
 ```
-
-
 ## String içerisinden bir alt string alma
 
 
 
 
-```    Console.WriteLine("kelime girin");
+```c#    Console.WriteLine("kelime girin");
             char[] kelime = Console.ReadLine().ToCharArray();
 
             Console.WriteLine("baþlangýç indexi giriniz :");
@@ -233,14 +217,12 @@
 
             Console.ReadKey();
  ```
-
-
-## Rastgele sayi türetme
+ ## Rastgele sayi türetme
 
 
 
 
-```
+```c#
 
             Random rndmsayituret = new Random();//random sýnýfý
             //int rastgelesayi = rndmsayituret.Next(5);        //0dan 5 e kadar 5 dahil deðil
@@ -259,14 +241,12 @@
             Console.ReadKey(); 
             
  ```
-
-
-## String içerisinde char karakter arama
+ ## String içerisinde char karakter arama
 
 
 
 
-```
+```c#
               Console.WriteLine("kelime girin");
             char[] kelime = Console.ReadLine().ToCharArray();
             Console.WriteLine("aranacak karakteri giriniz :");
@@ -293,14 +273,12 @@
             }
                           Console.ReadKey();
  ```
-
-
-## Girilen stringte sesli harf sayisini bulma
+ ## Girilen stringte sesli harf sayisini bulma
 
 
 
 
-``` 
+```c# 
             char[] sesli=new char[] { 'a', 'e', 'ı', 'i', 'o','A','E','I','İ','O' };
             Console.WriteLine("kelime girin");
             string a = Console.ReadLine();
@@ -329,14 +307,12 @@
                           Console.ReadKey();
             
  ```
-
-
-## ArrayList
+ ## ArrayList
 
 
 
 
-```
+```c#
 //array listi ve onun fonksiyonlarını  kullanmak için  bir nesne oluşturulması gerek. dinamiktir.
  //diziye eleman ekledikçe boyutu artar ,sildikçe küçülür. normal dizilerde silme olmaz.
  //ekleme veya silme: sondan veya istenilen yere şeklinde olur.
@@ -417,14 +393,12 @@
             Console.ReadKey();
             
  ```
-
-
-## Sayisal Loto Ornek
+ ## Sayisal Loto Ornek
 
 
 
 
-```
+```c#
             //sayisal loto 1 kolonda 6  sayi
             //8 kolon  kupon--- 1 den 50 ye kadar sayi
 
@@ -461,14 +435,12 @@
             Console.ReadKey();
             
  ```
-
-
-## Fonksiyonlar
+ ## Fonksiyonlar
 
 
 
 
-```
+```c#
         static void Main(string[] args)
         {
 
@@ -534,14 +506,12 @@
 
             
  ```
-
-
-## Overloading ve Params
+ ## Overloading ve Params
 
 
 
 
-``` static void Main(string[] args)
+```c# static void Main(string[] args)
         {
             //OVERLOADİNG
             //params değişken sayıda parametre oluşturma
@@ -576,14 +546,12 @@
         
              
  ```
-
-
-## Math sınıfı
+ ## Math sınıfı
 
 
 
 
-```    
+```c#    
         
         
         
@@ -665,14 +633,12 @@
     
                  
  ```
-
-
-## String sınıfı
+ ## String sınıfı
 
 
 
 
-``` 
+```c# 
     
 
 length trim 
@@ -731,14 +697,12 @@ noktalama varmı bakar
     
                  
  ```
-
-
-## Nesne oluşturma
+ ## Nesne oluşturma
 
 
 
 
-``` 
+```c# 
     
          class Program
     {
@@ -775,14 +739,12 @@ noktalama varmı bakar
     
                    
  ```
-
-
-## Get Set
+ ## Get Set
 
 
 
 
-``` 
+```c# 
      class Program
     {
         static void Main(string[] args)
@@ -840,13 +802,11 @@ noktalama varmı bakar
 
     }
 ```
-
-
 ## Comboboxa veri atma
 
 
                 
- ```
+ ```c#
       baglanti.open();
 
       oledbcommand combo_ekle =new oledbcommand
@@ -865,9 +825,7 @@ baglanti.close();
 
 
  ```
-
-
-## Dosya İşlemleri
+ ## Dosya İşlemleri
 
 
 >> programlamada ters / farklı anlamı var bu yüzden dosya adresinde ters/ hata verir.
@@ -877,7 +835,7 @@ baglanti.close();
 
    ## Dosya Oluşturma
                 
- ```
+ ```c#
  
   Directory.CreateDirectory("C:/Users//OneDrive/Masaüstü");  
   
@@ -885,10 +843,10 @@ baglanti.close();
 
        
                        
- ```  
+ ```c#  
    ## Dosya Silme 
  
- ```  
+ ```c#  
        if (Directory.GetFiles(textBox1.Text).Length != 0 || Directory.GetDirectories(textBox1.Text).Length != 0)
             {
                 if (MessageBox.Show("Klasör dolu\nSilinsin mi ?", "Emin Misin?", MessageBoxButtons.YesNo) == DialogResult.OK)
@@ -900,10 +858,10 @@ baglanti.close();
             }                           
  
  
- ```
+ ```c#
   ## Dosya var mı kontrolü
 
-```
+```c#
 
      if (Directory.Exists(textBox1.Text)) {
                 MessageBox.Show("Vardır.");
@@ -916,7 +874,7 @@ baglanti.close();
  ```
  ## Dosya taşıma
 
-```
+```c#
 
     Directory.Move(textBox1.Text,textBox2.Text);
 
@@ -924,7 +882,7 @@ baglanti.close();
  ## Klasör listeleme
 
 
-```  
+```c#  
 
 string[] klasor = Directory.GetDirectories(textBox1.Text);
             listBox1.Items.AddRange(klasor);
@@ -935,7 +893,7 @@ string[] klasor = Directory.GetDirectories(textBox1.Text);
  ## Dosya listeleme
 
 
-```  
+```c#  
         listBox2.Items.Clear();
           try        //işlemde hata riski varsa dener. hata alınca geri çeker.
           {
@@ -957,7 +915,7 @@ string[] klasor = Directory.GetDirectories(textBox1.Text);
  ## Mantıksal sürücüleri listele
 
 
-```  
+```c#  
   
   listBox1.Items.AddRange(  Directory.GetLogicalDrives());  
   
@@ -967,7 +925,7 @@ string[] klasor = Directory.GetDirectories(textBox1.Text);
  ## Text dosyası oluşturma
 
 
-```  
+```c#  
      TextWriter yaz= File.CreateText(textBox1.Text);
      yaz.WriteLine(richTextBox1.Text);
      yaz.Close();
@@ -978,7 +936,7 @@ string[] klasor = Directory.GetDirectories(textBox1.Text);
  ## Append ile text dosyası üzerine yazma
 
 
-```
+```c#
           //yazma iki farklı yöntemle yapılır
           //1-- append            kelime anlamı ucuca ekle - böyle dosya yoksa oluştur , varsa sonuna ekle.
           //2-- create text       yoksa oluştur  varsa siler ve yeni oluştur   
@@ -996,7 +954,7 @@ string[] klasor = Directory.GetDirectories(textBox1.Text);
  ## Text dosyasını okuma, textboxa yazma
 
 
-```
+```c#
 
           //readtoend en baştan ensona tek string olarak okur
           //read line satır satır okur.
@@ -1033,7 +991,7 @@ string[] klasor = Directory.GetDirectories(textBox1.Text);
 
 >>>>  Form1_Load  program başladığında ilk ayarlar yapılır
 
-```
+```c#
 
 
             bağlantı.Open();
@@ -1056,7 +1014,7 @@ string[] klasor = Directory.GetDirectories(textBox1.Text);
 
 >>>>Listboxtan seçilen kişiyi DataGridviewe atma
 
-``` 
+```c# 
       if (listBox1.SelectedIndex!=-1)
             {
                 bağlantı.Open();
@@ -1091,13 +1049,13 @@ string[] klasor = Directory.GetDirectories(textBox1.Text);
 >> DataGridView özellikler > event > cellcontent      (hücre için tıklama ile dataGridView1_CellContentClick oluşturulur)
 
 
-```
+```c#
    //otomatik ekleme butonu
    
  this.çalışanlarTableAdapter.Fill(this._takip___KopyaDataSet.çalışanlar);
 
 
-```  
+``` 
 
 
 ## VeriTabanı Bağlantısı
@@ -1148,7 +1106,7 @@ string[] klasor = Directory.GetDirectories(textBox1.Text);
 
  >  Örnek - Listeden seçilen kişiye ait bilgileri TextBoxa yazdırma
   
-``` 
+```c# 
      baglantı.Open();
             OleDbCommand list_oku = new OleDbCommand("select * from kişi where adı = '"+listBox1.SelectedItem.ToString()+"' ",baglantı);
             OleDbDataReader okuyucu = list_oku.ExecuteReader();
@@ -1171,14 +1129,14 @@ string[] klasor = Directory.GetDirectories(textBox1.Text);
 
 
   
-``` 
+```
 
 
 >  Örnek  -  Tc ye göre kişi kaydını silme
 
 
   
-```  
+```c#  
 
         baglantı.Open();
         OleDbCommand sil_komutu = new OleDbCommand("delete from kişi where tc="+txttc.Text,baglantı);
@@ -1187,14 +1145,14 @@ string[] klasor = Directory.GetDirectories(textBox1.Text);
         else
             MessageBox.Show("Silinemedi");
         baglantı.Close();  
-``` 
+```
 
 
 >   Örnek  -  TextBoxlardaki veriyle kişi kaydı ekleme
 
 
   
-```     
+```c#     
         baglantı.Open();
 
         OleDbCommand ekle = new OleDbCommand();
@@ -1213,3 +1171,5 @@ string[] klasor = Directory.GetDirectories(textBox1.Text);
 
 
         baglantı.Close();
+
+  ```

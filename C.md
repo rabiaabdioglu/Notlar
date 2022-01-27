@@ -23,7 +23,8 @@
 
 ## Girilen sayıların toplam ortalama ve sayisi
 
-```
+```c
+
 #include"stdio.h"
 
 
@@ -56,7 +57,7 @@ printf("\nOrtalama=%.2f",ortalama);}
 
 
 
-```
+```c
 #include"stdio.h"
 main()
 {
@@ -94,7 +95,7 @@ main()
 
 ## Çarpma kullanmadan toplama işlemi ile sonuç  
 
-```
+```c
 
 #include"stdio.h"
 
@@ -123,7 +124,7 @@ printf("%d *  %d	=	%d",a,b, sonuc);
 ```
 ## Basamak toplamı
 
-```
+```c
 
 
 main(){
@@ -155,7 +156,8 @@ main(){
 ## Girilen sayılar arasındaki çift sayılar 
 
 
-```
+```c
+
 #include"stdio.h"
 
 main(){
@@ -181,7 +183,8 @@ main(){
 ```
 ## Girilen sayının faktöriyel sonucunu bulan
 
-```
+```c
+
 #include"stdio.h"
 
 main(){
@@ -203,7 +206,8 @@ main(){
 
 ```
 ## Karenin alan ve çevresi
-```
+```c
+
 #include <stdio.h>
 
 main()
@@ -221,7 +225,9 @@ main()
 }
 ``` 
 ## Ödev vize ve final ortalamasına göre harf notu
-```
+
+```c
+
 #include"stdio.h"
 
 main()
@@ -281,12 +287,14 @@ main()
 
 	 else {
  	printf("Hata!");}}}
-  ```
-  
-## Asal sayi 
+
 ```
   
-  #include"stdio.h"
+## Asal sayi 
+
+```c
+  
+#include"stdio.h"
 main()
 	
 	
@@ -309,7 +317,8 @@ printf("\n");
 }	}
 ```
 ## Çarpım Tablosu
-```
+```c
+
 #include"stdio.h"
 main(){
 	
@@ -327,7 +336,8 @@ main(){
 			printf("\n-------------------------");	}}
 ```
 ## Dört işlem hesap makinesi
-```
+```c
+
 #include <stdio.h>
 
 main()
@@ -360,8 +370,7 @@ while (cevap!='E');
 }
 ```
 ## 10 kişilik sınıftaki not ortalamasi ve kalanlarin sayisi
-```
-
+```c
 #include"stdio.h"
 main(){
 		int notlar[10];
@@ -405,7 +414,8 @@ main(){
 
 ```
 ## Fonksiyonlara giriş
-```
+```c
+
 #include"stdio.h"
 #include <conio.h> 
 
@@ -434,8 +444,7 @@ main(){
 }
 ```
 ## Fonksiyon örneği- Yollanan dizinin ortalama ve toplamı
-```
-
+```c
 #include"stdio.h"
 #include <conio.h> 
 
@@ -495,8 +504,7 @@ main(){
 		}	
 ```
 ## Sayaç
-```
-
+```c
 #include"stdio.h"
 #include"unistd.h"
 main(){
@@ -524,7 +532,7 @@ while(1){
 ## Fonksiyon örneği- Girilen cumlendeki sesli harflerin indexini bulma
 
 
-```
+```c
 	#include "stdio.h"
   #include "string.h"
  
@@ -589,8 +597,8 @@ main()
 
 ```
 ## Dizinin  içerisine rastgele sayi atama, atılan sayı kadar yıldız yazdırma
-```
-	#include"stdio.h"
+```c
+#include"stdio.h"
 #include"stdlib.h"
 #include"time.h"
 #define x 10 // tüm 5 değerleri yerine x yazılır değer değiştiğinde x te değişir bkz. a[x ]
@@ -621,7 +629,8 @@ printf("*");
 
 ```
 ## Girilen iki stringi birlestirme
-```
+```c
+
 #include "stdio.h"
 #include "string.h"
 

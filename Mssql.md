@@ -34,7 +34,7 @@
 
 
 
-```
+```sql
   select * from tbl_Musteri
    
   select * from tbl_Musteri where Id = 6
@@ -46,7 +46,7 @@
 ## Create
 
 
-```
+```sql
       create table tbl_Kategori (
       Id int identity(1,1) primary key not null,
       Adi nvarchar(50) not null,
@@ -71,7 +71,7 @@
 
 
 
-```
+```sql
       insert into tbl_Kategori(Adi,Durum,SiraNo)
       values('Telefon',1,1),
             ('Bilgisayar',1,2),
@@ -106,7 +106,7 @@
 >>      Tablo isimlerinin sorgu devamındaki kısaltmaları
 
 
-```
+```sql
     Ornek 1   -->Kategorilerin , alt kategorisini listeleyen ve sira numarasına göre sıralayan sorgu
     
   
@@ -143,7 +143,7 @@
 
 
 
-```
+```sql
     Ornek 3   -->  Ürün olmayan kategorileri listeleyen sorgu
   
     select ak.Adi 
@@ -155,7 +155,7 @@
 
 ## Email kontrolü
 
-```
+```sql
     Ornek 4  --> İletişim bilgisi ..@..com şeklinde olmayan müşterileri listeleyen sorgu
     
     select * 
@@ -176,7 +176,7 @@
 >>
 
 
-```
+```sql
 
   Rigth join
   
@@ -200,7 +200,6 @@
 
 ```
 
-
 ## Sum count Group by
 
 >> 
@@ -209,7 +208,7 @@
 >>         COUNT(*)                      adet döndürür
 >> 
 
-```
+```sql
     Ornek 5  -->  Müşteri bazlı  kaç kere ve kaç defa alışveriş yapılmıştır
 
     select mu.Adi ,sum(se.Adet) as Toplam , COUNT(*) as Adet
@@ -223,7 +222,6 @@
 
 ```
 
-
 ## Convert 
 
 >>
@@ -231,7 +229,7 @@
 >>
 
 
-```
+```sql
 
 
     select Adi,SatisFiyat,
@@ -242,7 +240,6 @@
 
 ```
 
-
 ## İçiçe sorgu
 
 >>      Tablo birleştirme yöntemleri 
@@ -251,7 +248,7 @@
 >>		  3- Subquery(iç içe sorgular yada alt sorgu)
 
 
-```
+```sql
   --İç sorgunun cevabı dış sorgunun kriteridir.
   
     select * 
@@ -270,13 +267,12 @@
 
 ```
 
-
 ## İçiçe sorgu ile update
 
 
 
 
-```
+```sql
 
     update tbl_Urun set SatisFiyat = SatisFiyat * 1.1
     where Id in(
@@ -290,7 +286,6 @@
 
 
 ```
-
 
 ## Case kullanımı 
 
@@ -306,7 +301,7 @@
 
 
 
-```
+```sql
 
 SELECT (case Cinsiyet 
 	when 'E' then 'Erkek'
@@ -317,15 +312,12 @@ SELECT (case Cinsiyet
 
 ```
 
-
-
-
 ## Unıon
 
 
 
 
-```
+```sql
 
 	union,
 	union all
@@ -333,7 +325,7 @@ SELECT (case Cinsiyet
 	intersect 	-> 	 iki sorgu arasındaki ortak olanı verir, 
 	except(minus)	->	 iki sorgudaki farklı olanı verir (ilk sorguyu görür) */
 
-```
+```sql
 
 ## Stored Procedure
 
@@ -343,7 +335,7 @@ SELECT (case Cinsiyet
 
 >> Procedure oluşturma
 
-```
+```sql
 
 	create procedure usp_KategoriListesi
 	as
@@ -351,23 +343,23 @@ SELECT (case Cinsiyet
 	select * from tbl_Kategori
 	end
 
-```
+```sql
 
 >> Procedure çağırma
 
-```
+```sql
 	exec usp_KategoriListesi
 
 	--procedurede değişiklik yapmak için ALTER kullanıyoruz.
 
-```
+```sql
 
 ## Procedure orneği
 
 
 
 
-```
+```sql
 
 	Ornek 6 --> Marka adına göre markanın bulunduğu kategorilerin adını procedure 
 
@@ -395,13 +387,12 @@ SELECT (case Cinsiyet
 	exec sp_Marka 'Apple'
 ```
 
-
 ## Function
 
 
 
 
-```
+```sql
 
 	Ornek 7 -> Ad soyadı birleştiren fonksiyon
 	
@@ -421,13 +412,12 @@ SELECT (case Cinsiyet
 
 ```
 
-
 ## Function Alter
 
 
 
 
-```
+```sql
 	Ornek 8 -> Yaş hesaplayan fonksiyon
 
 	--Alter ile fonksiyon güncellenir.
@@ -447,13 +437,12 @@ SELECT (case Cinsiyet
 
 ```
 
-
 ## Function -- Tablo döndürme
 
 
 
 
-```
+```sql
 
 	alter function Fn_KategoridekiUrunler(@KategoriId int, @KategoriAdi nvarchar(50))
 	returns table
@@ -476,13 +465,12 @@ SELECT (case Cinsiyet
 
 ```
 
-
 ## Varolan tablolardan rastgele veri alımı
 
 >> if else kullandığımız zamana süslü parantezler yerine begin end kullanılır
 >> rand(): 0-1 arasında sayı üretir
 
-```	
+```sql	
 	Ornek 9 -> Personel tablosu oluşturmak için otomatik random değerler atama
 
 
@@ -556,7 +544,6 @@ SELECT (case Cinsiyet
 
 ```
 
-
 ## Transaction
 
 
@@ -569,7 +556,7 @@ SELECT (case Cinsiyet
 
 
 
-```	
+```sql	
 	Ornek 10 -> Havale isteğini gerçekleştiren trans
 
 	
@@ -645,7 +632,6 @@ SELECT (case Cinsiyet
 	
 ```
 
-
 ## Rollback ve commit 
 
 >> ROLLBACK:  Herhangi bir sorunla karşılaşılınca işlemlerin bir kısmını yapsa da en başa ger döner
@@ -661,7 +647,7 @@ SELECT (case Cinsiyet
 >> 
 
 
-```	
+```sql	
 	
 	--Ornek 10 için 
 	--Kontrol kodları 
@@ -688,7 +674,6 @@ SELECT (case Cinsiyet
 		select * from tbl_Hesap
 ```
 
-
 ## İndex Konusu
 
 
@@ -703,7 +688,7 @@ SELECT (case Cinsiyet
 >> primary key LZ olunca otomotik olarak clustered index olşturulur
 
 
-```
+```sql
 		Clustered ındex:	yapısında veri sıralı olduğu için  hemen bulunabilir.	
 					önce tabloda index varmı diye bakar.
 					leaflerin içerisinde data nın adresini bulundurur.

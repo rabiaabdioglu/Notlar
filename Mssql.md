@@ -325,7 +325,7 @@ SELECT (case Cinsiyet
 	intersect 	-> 	 iki sorgu arasındaki ortak olanı verir, 
 	except(minus)	->	 iki sorgudaki farklı olanı verir (ilk sorguyu görür) */
 
-```sql
+```
 
 ## Stored Procedure
 
@@ -343,7 +343,7 @@ SELECT (case Cinsiyet
 	select * from tbl_Kategori
 	end
 
-```sql
+```
 
 >> Procedure çağırma
 
@@ -352,7 +352,7 @@ SELECT (case Cinsiyet
 
 	--procedurede değişiklik yapmak için ALTER kullanıyoruz.
 
-```sql
+```
 
 ## Procedure orneği
 

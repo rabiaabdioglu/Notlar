@@ -843,7 +843,7 @@ baglanti.close();
 
        
                        
- ```c#  
+ ```  
    ## Dosya Silme 
  
  ```c#  
@@ -858,7 +858,7 @@ baglanti.close();
             }                           
  
  
- ```c#
+ ```
   ## Dosya var mı kontrolü
 
 ```c#

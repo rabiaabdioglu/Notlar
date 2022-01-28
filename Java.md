@@ -19,7 +19,7 @@
 
 
 
-## Kullanıcıdan alınan 5 sayi pozitif mii negatif mi 
+## Kullanıcıdan alınan 5 sayi pozitif mi negatif mi 
 
 ```java
 

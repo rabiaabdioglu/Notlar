@@ -2,7 +2,7 @@
 ## Java Ornekleri
 
 
-- [Kullanıcıdan alınan 5 sayi pozitif mii negatif mi ](#Kullanıcıdan-alınan-5-sayi-pozitif-mi-negatif mi )
+- [Kullanıcıdan alınan 5 sayi pozitif mii negatif mi ](#Kullanıcıdan-alınan-5-sayi-pozitif-mi-negatif-mi )
 - [Kullanıcıdan alınan 3 sayiyi büyükten küçüğe sırala](#Kullanıcıdan-alınan-3-sayiyi-büyükten-küçüğe-sırala)
 - [Yukarıdaki örneğin yer değiştirme mantığıyla yapılışı](#Yukarıdaki-örneğin-yer-değiştirme-mantığıyla-yapılışı)
 - [Faktöriyel bulma](#Faktöriyel-bulma)

@@ -66,11 +66,6 @@
 
 
 		
-		
-		
-	
-	
-
 }
 	```
     
@@ -78,11 +73,11 @@
 ## Yukarıdaki örneğin yer değiştirme mantığıyla yapılışı
 
 ```java	
-public static void main(String[] args) {
 
-			int a,b,c,d;
+
+		int a,b,c,d;
 			
-			Scanner yaz=new Scanner(System.in);
+		Scanner yaz=new Scanner(System.in);
 		
 		a=yaz.nextInt();
 		b=yaz.nextInt();
@@ -90,150 +85,192 @@ public static void main(String[] args) {
 		//d ye en buyuk olan atanır
 
 		
-		
 		if(a<=b){
 		d=a;
 		a=b;
 		b=d;}
 		
 		if(a<=c){
-				d=a;
-				a=c;
-				c=d;
-				
-			}
+		d=a;
+		a=c;
+		c=d;
+		}
 		
 		if(b<=c){
-				d=b;
-				b=c;
-				c=d;
-				}	
+		d=b;
+		b=c;
+		c=d;
+		}	
 			
 		
-		System.out.println(a+">"+b+">"+c);}
+		System.out.println(a+">"+b+">"+c);
 
 ```
     
     
 ## String sınıfı metodları 
 
-    > .toLowerCase()
-		> Methodu cağıran metin ifadesinin(dizgi) nesnesinin tamamen
-		> küçük harfe çevrilmiş halini geri verir.
+> .toLowerCase()
+> 
+> Methodu cağıran metin ifadesinin(dizgi) nesnesinin tamamen
+> 
+> küçük harfe çevrilmiş halini geri verir.
+> 
 
-	```java	 
-				string kelime="MERHABA";
-				string kkelime=kelime.toLowerCase();
-		```
-		> .toUpperCase();
-		> Methodu çağıran dizgi nesnesini tamamen büyük harfe çevrilmiş
-		> olan dizgi verir.
+```java	 
+		string kelime="MERHABA";
+		string kkelime=kelime.toLowerCase();
+```
+> .toUpperCase();
+> 
+> Methodu çağıran dizgi nesnesini tamamen büyük harfe çevrilmiş
+> 
+> olan dizgi verir.
 
-	```java	 		
-				string kelime="merhaba";
-				string bkelime=kelime.to.UpperCase();
-  ```			
-		> .substring(Başlangıç)
-		> Methodu çağıran dizgi nesnesinin başlangıç numaralı karekterinden
-		> dizginin sonuna kadar olan bölümünü bir dizgi olarak geri verir.
+```java	 		
+		string kelime="merhaba";
+		string bkelime=kelime.to.UpperCase();
+```
+	
+> .substring(Başlangıç)
+> 
+> Methodu çağıran dizgi nesnesinin başlangıç numaralı karekterinden
+> 
+> dizginin sonuna kadar olan bölümünü bir dizgi olarak geri verir.
+> 
+
 ```java
+
+		string kelime="merhaba";
+		string parçala=kelime.substring(4);
+```
+				
+> .substring(Başlangıç,son)
+> 
+> Methodu çağıran başlangıç numaraları karakterinden son numaralı
+> 
+> karakterine kadar olan bölümünü bir dizgi olarak geri verir.
+> 
+```java
+
+		string kelime="merhaba";
+		string oarçala=kelime.substring(1,4); 
+		string kelime="bilgisayar";
+		string oarçala=kelime.substring(1,4);
+		string kelime="rabia abdioglu";
+		string oarçala=kelime.substring(2,7); 
+```
+				
+> .indexOf(bir dizi)
+> 
+> String üzerinde bir dizgin ile kayıtlı ilk görüldüğü noktayı bulur.
+> 
+> Eğer bir dizgi dizgisinin içinde yoksa -1 değerini verir.
+> 
+
+
+```java
+
+		string kelime="rabia rabia rabia";
+		int a = kelime.indexOf("rabia"); 0
+		int a = kelime.indexOf("r"); 2
+		System.out.println(a);
+```
+
+> .indexOf(dizgi,başlangıç)
+> 
+> Bir dizgi üzerinde başlangıç numaralı karekterden sonra başka bir
+> 
+> dizginin ilk görüldüğü noktayı bulur,yoksada -1 döndürür.
+> 
+
+
+```java
+		string kelime="rabia rabia rabia";
+		int a = kelime.indexOf("rabia",5); 8
+```
 		
-				string kelime="merhaba";
-				string parçala=kelime.substring(4);
-```
-				
-		> .substring(Başlangıç,son)
-		> Methodu çağıran başlangıç numaraları karakterinden son numaralı
-		> karakterine kadar olan bölümünü bir dizgi olarak geri verir.
-```java
-
-				string kelime="merhaba";
-				string oarçala=kelime.substring(1,4); erh
-				string kelime="bilgisayar";
-				string oarçala=kelime.substring(1,4); gi
-				string kelime="enes rabia";
-				string oarçala=kelime.substring(2,7); es ra
-```
-				
-		> .indexOf(bir dizi)
-		> String üzerinde bir dizgin ile kayıtlı ilk görüldüğü noktayı bulur.
-		> Eğer bir dizgi dizgisinin içinde yoksa -1 değerini verir.
-```java
-				
-				string kelime="nur nur nur";
-				int a = kelime.indexOf("nur"); 0
-				int a = kelime.indexOf("r"); 2
-				System.out.println(a);
-```		
-		> .indexOf(dizgi,başlangıç)
-		> Bir dizgi üzerinde başlangıç numaralı karekterden sonra başka bir
-		> dizginin ilk görüldüğü noktayı bulur,yoksada -1 döndürür.
-				
-```java
-				string kelime="nur nur nur";
-				int a = kelime.indexOf("nur",5); 8
-```
-		
-		> .lastindexOf(dizgi)
-		> Dizgi üzerinde bir dizgi ile tanımlı başka bir dizginin son 
-		> görüldüğü noktayı bulur.Eğer dizgi içinde yoksa sonuç olarak -1 
-		> değerini verir.
+> .lastindexOf(dizgi)
+> 
+> Dizgi üzerinde bir dizgi ile tanımlı başka bir dizginin son 
+> 
+> görüldüğü noktayı bulur.Eğer dizgi içinde yoksa sonuç olarak -1 
+> 
+> değerini verir.
+> 
 				
 ```java
 
-				string kelime="nur nur nur";
-				int a = kelime.lastIndexOf("nur"); 8
+		string kelime="rabia rabia rabia";
+		int a = kelime.lastIndexOf("rabia"); 
 ```
 				
-		> .length()
-		> Dizgi nesnesinin içinde bulunan karekter sayısını verir.
+> .length()
+> 
+> Dizgi nesnesinin içinde bulunan karekter sayısını verir.
+> 
+
 ```java
-				
-				String kelime = "fatma nur";
-				int a = kelime.length();
-				System.out.printIn(a);
+
+		String kelime = "rabia rabia";
+		int a = kelime.length();
+		System.out.printIn(a);
 ```
 
-		> .trim()
-		> Dizginin başındaki ve sondaki boşlukları silindiği bir dizgi
-		> geri verir.
+> .trim()
+> 
+> Dizginin başındaki ve sondaki boşlukları silindiği bir dizgi
+> 
+> geri verir.
+> 
+```java
+
+		string kelime = " rabia abdioglu ";
+		string at = kelime.trim();
+ ```
+ 
+> .charAt(konum)
+> 
+> Dizginin üzerinde yer alan konum numaralı karekteri geri verir.
+> 
+
 ```java
 				
-				string kelime = " enes kılıç ";
-				string at = kelime.trim();
- ```		
-		> .charAt(konum)
-		> Dizginin üzerinde yer alan konum numaralı karekteri geri verir.
-```java
-				
-				string kelime="merhaba";
-				char a = kelime.CharAt(3); h
-```				
-		> .compareTo(dizgi)
-		> Methodu çağıran nesne ile dizgi nesnesini alfabetik olarak
-		> karşılaştırır.Eğer methodu çağıran nesne daha kuçuk ise method
-		> sıfırdan daha küçük bir değer verir.eğer iki dizgi eşitse sıfır
-		> verir.Eğer methodu çağıran nesne büyükse 0 dan büyük değer verir.
-```java
-				 
-				 String kelime="merhaba";
-				 int a = kelime.compareTo("merhaba"); 1
-				 System.out.println(a);
+		string kelime="merhaba";
+		char a = kelime.CharAt(3); 
 ```
-				
-		> .equals()             eşit mi true false döndürür.
-		> .equalsIgnoreCase()   büyük küçük önemli değil eşit ise true.
+> .compareTo(dizgi)
+> 
+> Methodu çağıran nesne ile dizgi nesnesini alfabetik olarak
+> 
+> karşılaştırır.Eğer methodu çağıran nesne daha kuçuk ise method
+> 
+> sıfırdan daha küçük bir değer verir.eğer iki dizgi eşitse sıfır
+> 
+> verir.Eğer methodu çağıran nesne büyükse 0 dan büyük değer verir.
+> 
+```java
+
+		 String kelime="merhaba";
+		 int a = kelime.compareTo("merhaba"); 
+		 System.out.println(a);
+```
+
+> .equals()             eşit mi true false döndürür.
+> 
+> .equalsIgnoreCase()   büyük küçük önemli değil eşit ise true.
+> 
     
 ```java
-				String kelime1="Rabia";
-				String kelime2="KELİME";
-				String kelime3="kelime";
-						
-				System.out.println(kelime1.equals(kelime1));              //true
-				System.out.println(kelime1.equals(kelime2));              //false
-				System.out.println(kelime2.equalsIgnoreCase(kelime3));    //true
-				System.out.println(kelime2.equals(kelime3));              //false
-				System.out.println(kelime2.equals(kelime3.toUpperCase()); //true
+		String kelime1="Rabia";
+		String kelime2="KELİME";
+		String kelime3="kelime";
+
+		System.out.println(kelime1.equals(kelime1));              //true
+		System.out.println(kelime1.equals(kelime2));              //false
+		System.out.println(kelime2.equalsIgnoreCase(kelime3));    //true
+		System.out.println(kelime2.equals(kelime3));              //false
+		System.out.println(kelime2.equals(kelime3.toUpperCase()); //true
 				
 			
 				

@@ -2,7 +2,19 @@
 ## Java Ornekleri
 
 
-- [Sayi Karşilaştirma](#Sayi-Karşilaştirma)
+- [Kullanıcıdan alınan 5 sayi pozitif mii negatif mi ](#Kullanıcıdan-alınan-5-sayi-pozitif-mi-negatif mi )
+- [Kullanıcıdan alınan 3 sayiyi büyükten küçüğe sırala](#Kullanıcıdan-alınan-3-sayiyi-büyükten-küçüğe-sırala)
+- [Yukarıdaki örneğin yer değiştirme mantığıyla yapılışı](#Yukarıdaki-örneğin-yer-değiştirme-mantığıyla-yapılışı)
+- [Faktöriyel bulma](#Faktöriyel-bulma)
+- [Kenar uzunlukları verilen üçgenin çeşidini bulma](#Kenar-uzunlukları-verilen-üçgenin-çeşidini-bulma)
+- [String sınıfı](#String-sınıfı-metodları)
+- [Math sınıfı](#Sayi)
+- [Rastgele seçilen sayiyi tahmin etme](#Rastgele-seçilen-sayiyi-tahmin-etme)
+- [İnheritance](#İnheritance)
+- [Constructor](#Constructor)
+- [This ve Super](#This-ve-Super)
+- [Araba constructor](#Araba-constructor)
+- [OOB örnek](#OOB-örnek)
 
 
 
@@ -38,9 +50,9 @@
 		
 		Scanner yaz=new Scanner(System.in);
 	
-	a=yaz.nextInt();
-	b=yaz.nextInt();
-	c=yaz.nextInt();
+		a=yaz.nextInt();
+		b=yaz.nextInt();
+		c=yaz.nextInt();
 
 		int buyuk = 0,kucuk=0,orta=0;
 	
@@ -472,7 +484,8 @@ public class otomobil extends araba{
 >> this: sınıf içindeki özelliğe erişmek için kullanılır
 >> super: alt sınıf veya üst sınıftakilerden erişmek isteniliyorsa
 
->> Daire constructor 
+# Daire constructor 
+
 ```java	
 	public class Daire {
 		int yari_cap;
@@ -579,56 +592,56 @@ public class otomobil extends araba{
 
 ```java
 
-public class insan extends canlilar {
+	public class insan extends canlilar {
 
-	int yas;
-	String cins;
-	
-	public insan(int bbbb,int aaaa,String isimmmm,String cns,int y){
-		
-		super.boyu=bbbb;
-		super.agirlik=aaaa;
-		super.ad=isimmmm;
-		this.cins=cns;
-		this.yas=y;
-		
-		
+		int yas;
+		String cins;
+
+		public insan(int bbbb,int aaaa,String isimmmm,String cns,int y){
+
+			super.boyu=bbbb;
+			super.agirlik=aaaa;
+			super.ad=isimmmm;
+			this.cins=cns;
+			this.yas=y;
+
+
+		}
+
+
+		public static void main(String[] args) {
+
+			insan i1=new insan(180,60,"rabia","insan",20);
+			i1.yazdir();
+
+		}
+
 	}
-	
-	
-	public static void main(String[] args) {
-
-		insan i1=new insan(180,60,"rabia","insan",20);
-		i1.yazdir();
-		
-	}
-
-}
 ```
 >> Hayvan sınıfı
     
 
 ```java
 
-public class hayvanlar extends canlilar {
+	public class hayvanlar extends canlilar {
 
-	String cins;
-	
-	public hayvanlar(int bb,int aa,String isimm,String c){
-		
-		super.boyu=bb;
-		super.agirlik=aa;
-		super.ad=isimm;
-		this.cins=c;
-	}
-	
-	
-	public static void main(String[] args) {
+		String cins;
 
-	hayvanlar h1=new hayvanlar(5,6,"mırmır","kedi");	
-	h1.yazdir();
-		
-	}
+		public hayvanlar(int bb,int aa,String isimm,String c){
+
+			super.boyu=bb;
+			super.agirlik=aa;
+			super.ad=isimm;
+			this.cins=c;
+		}
+
+
+		public static void main(String[] args) {
+
+		hayvanlar h1=new hayvanlar(5,6,"mırmır","kedi");	
+		h1.yazdir();
+
+		}
 
 }
 
@@ -638,37 +651,37 @@ public class hayvanlar extends canlilar {
 
 ```java
 
-public class bitkiler extends hayvanlar {
-	// hayvanlardan miras alınmasının sebebi
-	// hayvanlar sınıfının miras aldığı, canlılar sınıfının özelliklerini 
-	// bitkiler sınıfınında kullanabililyor olmasını göstermek
+	public class bitkiler extends hayvanlar {
+		// hayvanlardan miras alınmasının sebebi
+		// hayvanlar sınıfının miras aldığı, canlılar sınıfının özelliklerini 
+		// bitkiler sınıfınında kullanabililyor olmasını göstermek
 
-	String solunum;
-	
-	public bitkiler(int bbb,int aaa,String isimmm,String s){
-		
-		super.boyu=bbb;
-		super.agirlik=aaa;
-		super.ad=isimmm;
-		this.solunum=s;
-		
-	}
-	
-	public static void main(String[] args) {
+		String solunum;
 
-		bitkiler b1=new bitkiler();
-		b1.ad="lahana";
-		b1.agirlik=2;
-		b1.boyu=5;
-		b1.cins="sebze";
-		b1.solunum="fotosentez";
-		b1.yazdir();
-	}
+		public bitkiler(int bbb,int aaa,String isimmm,String s){
+
+			super.boyu=bbb;
+			super.agirlik=aaa;
+			super.ad=isimmm;
+			this.solunum=s;
+
+		}
+
+		public static void main(String[] args) {
+
+			bitkiler b1=new bitkiler();
+			b1.ad="lahana";
+			b1.agirlik=2;
+			b1.boyu=5;
+			b1.cins="sebze";
+			b1.solunum="fotosentez";
+			b1.yazdir();
+		}
 
 }
 
 ```
->> İnsan sınıfı
+>> 
     
 
 ```java

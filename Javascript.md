@@ -2,6 +2,16 @@
 
 ## Javascript Ornekleri #
 - [Veri Tipleri](#Veri-Tipleri)
+- [Var Let Const](#Var-Let-Const)
+- [Veri Tip Dönüşümleri](#Veri-Tip-Dönüşümleri)
+- [Döngüler](#Döngü)
+- [Math](#Math)
+- [String](#String)
+- [Array](#Array)
+- [Nesne oluşturma](#Nesne-oluşturma)
+- [Fonksiyon](#Fonksiyon)
+- [Değişkenler](#Değişkenler)
+- [Değişkenler](#Değişkenler)
 - [Değişkenler](#Değişkenler)
 
 
@@ -14,7 +24,7 @@
 
 
 
-  ## Girilen sifre kontrolü
+  ## Veri Tipleri
 
 
 
@@ -134,7 +144,7 @@ value = parseInt("3");        //integer
 
 value = Boolean(0);           //bool
 ```
-  ## Döngü
+  ## Döngüler
 
 
 
@@ -375,72 +385,3 @@ value = Boolean(0);           //bool
 
 ```
  
-  ## Window
-
-
-
-
-```javascript ```
- 
-  ## Window
-
-
-
-
-```javascript ```
- 
-  ## Window
-
-
-
-
-```javascript ```
- 
-  ## Window
-
-
-
-
-```javascript ```
- 
-  ## Window
-
-
-
-
-```javascript ```
- 
-  ## Window
-
-
-
-
-```javascript ```
- 
-  ## Window
-
-
-
-
-```javascript ```
- 
-  ## Window
-
-
-
-
-```javascript ```
- 
-  ## Window
-
-
-
-
-```javascript ```
- 
-  ## Window
-
-
-
-
-```javascript 

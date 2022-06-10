@@ -372,16 +372,143 @@ value = Boolean(0);           //bool
       metod.delete(10);
 ```
  
-  ## 
-
-
-
-
-```javascript
-
-
+  ## DOM Manipülosyonu
 
 
 
 ```
+Document object model -  DOM
+
+Sabit web sayfalarına dinamiklik katmak için kullanılır. 
+
+Html sayfası ve etiketleri arasında parent - child  ilişkisi vardır.  Elementler arası ilişki ile element idsi kullanarak obje manipüle edilebilir. 
+
+Window object içerisinde document, link özellikleri vardır. 
+
+```
  
+ ###document object
+
+```javascript 
+
+let value;
+
+value=document.all;
+value=document.all[document.all.length-1];  //en son satıra ulaşmak için
+
+
+const elements=document.all; //hmtl collection
+
+for(let i=0;i<elements.length;i++){
+console.log(elements[i]);
+
+
+//foreach için arraye çevirmek gerekir. 
+
+const collections=Array.from(document.all);
+collections.forEach(
+function(collection){
+console.log(collection);}
+);
+
+value=document.characterSet;  // utf-8
+
+value=document.scripts.length; //kaç script var
+
+//Links
+
+
+value=document.links[2];      //2. link
+value=document.links[0].getAttribute("class");  //hangi sınıf
+value=document.links[0].className veya classList ile kullanılabilir.  
+
+
+//Forms
+
+
+value=document.forms[2];  
+value=document.links["form"];  
+value=document.forms[0].getAttribute("name");   // formun name bilgisini almak için 
+
+value=document.forms[0].method;  
+
+``` 
+
+ 
+ ###Elementleri Seçme
+
+```javascript
+
+let element
+
+element=document.getElementById("todo-form");  //id ye göre 
+element=document.getElementByClassName("list-group-item")[0]; //class birden çok olduğu için dizi döndürür 
+element=document.getElementByTagName("div"); //tüm divleri gösterir.
+
+element=document.querySelector("#todo-form");  //id ile
+
+element=document.querySelector(".list-group-item");  //class ile
+
+
+//Birden çok elemet için 
+element=document.querySelectorAll(".list-group-item"); 
+
+
+element.forEach(function(el){console.log(el);});
+
+//Özelliklere bakmak için 
+
+console.log(element.id);  
+console.log(element.classList[1]);  
+//hred innerHtml  vb özelliklere bakılabilir.
+
+
+console.log(element.style); //elementin css özellikleri gelir.  
+
+//css özelliklerini değiştirme 
+
+element.className="btn btn-primary";
+element.style.color="#000";
+//diğer tüm css özellikleri bu şekilde değiştirilebilir. 
+
+element.href="http.....";
+element.target="_blank";
+
+element.textContent="Sil";
+  
+element.innerHTML="<span style='red'> Sil</span>";
+
+//sınıfı aynı olan tüm elementleri dizi olarak alır. Foreach ile her birine özellik ataması yapar
+elements=doceument.querySelectorAll(".list-group-item");//NodeList
+element.forEach(function(el){
+el.style.color="red";
+el.style.background="white";
+
+});
+
+
+//li elementleri içerisinde çift olanları alır.  
+let element2=document.querySelector("li:nth-child(2));
+
+
+
+
+``` 
+
+ 
+ ###Dom elementleri üzerinde gezinme
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

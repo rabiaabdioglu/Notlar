@@ -499,6 +499,129 @@ let element2=document.querySelector("li:nth-child(2));
  
  ### Dom elementleri üzerinde gezinme
 
+```javascript
+
+let value;
+const todoList=document.querySelector(".list-group");
+const todo=doceument.querySelector(".list-group-item:nth-child(odd)");
+const cardRow=document.querySelector(".card.row");
+
+value=todoList; // tüm li elementleri geldi 
+value=todo;     // seçilen li geliir
+value=cardRow;  // sınıfı card ve row olan gelir
+
+value=todoList.childNodes;  //textler gelir
+
+value=todoList.children;    // Element gelir. text dahil değildir.
+
+//child->child
+
+value=cardRow.children[2].children[1].textContext="XXXX"; 
+
+
+
+value=todoList.lastElementChild; 
+value=todoList.children.Length;
+value=todoList.childElementCount;
+
+//ebeceyn ebeveyni 
+value=cardRow.parenElement.parenElement;
+
+//bir önceki child
+value=todo.previousElementSibling;   
+
+``` 
+
+ 
+ ### Dinamik Element Ekleme Silme ve Değiştirme
+ 
+
+```javascript
+
+//EKLEME
+
+//html sayfasında :  card header altında 2 card body var. 
+
+// <a id ="clear-todos" class="btn btn-dark" href="#">xx</a>
+
+
+const newLink= document.createElement("a");
+const cardBody=document.getElementByClassName("card-body")[1];
+newLink.id="clear-todos";
+newLink.href="https....";
+newLink.target="_blank";//yeni sekme
+newLink.textContent="xxxx";//güvenli değil 
+
+//Text Nodes- çocuk olarak eklenir. istenilen yere
+
+const text=document.createTextNode("xxxxx");
+cardbody.appendChild(text);
+
+newLink.appendChild(document.createTextNode("Farklı sayfa git"));
+cardbody.appendChild(newLink);
+
+//SİLME
+const todoList=document.querySelector("ul.list-group");
+const todos=document.querySelectorAll(li.list-group-item");
+
+todos[0].remove();
+
+//Remove child
+
+todoList.removeChild(todoList.lastElementChild);
+
+//DEGİSTİRME
+
+const cardBody=document.querySelectorAll(".card-body")[1];
+
+const newElement=document.createElement("h3");
+newElement.className="card-title"; //diğer özellikler ekleniyor
+
+cardbody.replaceChild(newElement,oldElement);
+
+
+``` 
+
+ 
+ ### Dinamik Attribute 
+```javascript
+
+const todoInput =document.getElementById("todo");
+let element;
+element=todoInput.placeholder;//1.
+element=todoInput.getAttribute("placeholder");//2
+
+todoInput.setAttribute("placeholder","xxxxx");
+
+todoInput.setAttribute("title","Input");
+
+todoInput.removeAttribute("name");
+
+
+``` 
+
+ 
+ ### Event Listener ve Object 
+
+```javascript
+
+const filter =document.getElementById("filter");
+filter.onFocus=function(){
+console.log("xxxx");}
+
+
+filter.addEventListener("focus",function(e){
+console.log(e);
+//e.type
+//e.target.className vb event bilgileri edinilebilir.
+
+const todoForm=document.getElementById("todo-form");
+
+todoForm.addEventListener("submit",submitForm);
+
+function submitForm(e){
+console.log("Submit Eventi");
+e.preventDefault();
 
 
 
@@ -510,6 +633,75 @@ let element2=document.querySelector("li:nth-child(2));
 
 
 
+``` 
+
+ 
+ ### Event Listener ve Object 
+
+```javascript
+
+
+
+``` 
+
+ 
+ ### Event Listener ve Object 
+
+```javascript
+
+
+
+``` 
+
+ 
+ ### Event Listener ve Object 
+
+```javascript
+
+
+
+``` 
+
+ 
+ ### Event Listener ve Object 
+
+```javascript
+
+
+
+``` 
+
+ 
+ ### Event Listener ve Object 
+
+```javascript
+
+
+
+``` 
+
+ 
+ ### Event Listener ve Object 
+
+```javascript
+
+
+
+``` 
+
+ 
+ ### Event Listener ve Object 
+
+```javascript
+
+
+
+``` 
+
+ 
+ ### Event Listener ve Object 
+
+```javascript
 
 
 

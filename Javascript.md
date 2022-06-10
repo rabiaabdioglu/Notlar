@@ -372,7 +372,7 @@ value = Boolean(0);           //bool
       metod.delete(10);
 ```
  
-  ## DOM Manipülosyonu
+  ## DOM Manipülasyonu
 
 
 
@@ -381,13 +381,14 @@ Document object model -  DOM
 
 Sabit web sayfalarına dinamiklik katmak için kullanılır. 
 
-Html sayfası ve etiketleri arasında parent - child  ilişkisi vardır.  Elementler arası ilişki ile element idsi kullanarak obje manipüle edilebilir. 
+Html sayfası ve etiketleri arasında parent - child  ilişkisi vardır. 
+Elementler arası ilişki ile element idsi kullanarak obje manipüle edilebilir. 
 
 Window object içerisinde document, link özellikleri vardır. 
 
 ```
  
- ###document object
+ ### Document Object
 
 ```javascript 
 
@@ -435,7 +436,7 @@ value=document.forms[0].method;
 ``` 
 
  
- ###Elementleri Seçme
+ ### Elementleri Seçme
 
 ```javascript
 
@@ -496,7 +497,7 @@ let element2=document.querySelector("li:nth-child(2));
 ``` 
 
  
- ###Dom elementleri üzerinde gezinme
+ ### Dom elementleri üzerinde gezinme
 
 
 

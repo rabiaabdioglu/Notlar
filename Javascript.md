@@ -309,7 +309,7 @@ value = Boolean(0);           //bool
           nefesAl : function(){
               console.log("Nefes Alınıyor...");
           }
-         nefesVer : function(){
+          nefesVer : function(){
               console.log("Nefes Veriliyor...");
           }
 

@@ -1,6 +1,6 @@
 
 
-##  Swift #
+##  Swift Ornekleri #
 - [Swift Giris](#Swift-Giris)
 
 

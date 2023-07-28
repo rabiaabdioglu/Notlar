@@ -93,9 +93,10 @@ print("The average score for each level is \(averageScoreDouble).")
 
 #### String Operations and Manipulation
 
-```swift
 
-//// Time and Day Information
+###### Time and Day Information
+
+```swift
 
 let today = "Tuesday"
 print("Today is \(today)")
@@ -270,10 +271,7 @@ if enteredPin == pinCode {
 }
 
 
-
-
 ```
-
 
 #### Array Usage in Swift
 
@@ -415,34 +413,37 @@ print("Total calories for the day: \(totalCalories)")
 
 
 ####  Different Usages of Functions 
+####
+###### Swift function examples with different parameter scenarios 
+###### Example 1: Function with Underscore (_) for Parameter Names
+###### In this example, the "_" symbol for parameters indicates that we do not need to use the parameter names "fn" and "sn" when calling the function. We can call the function as follows:
 
 ```swift
-// Swift function examples with different parameter scenarios
 
-// Example 1: Function with Underscore (_) for Parameter Names
-// In this example, the "_" symbol for parameters indicates that we do not need to use the parameter names "fn" and "sn" when calling the function. We can call the function as follows:
 func hiThere(_ fn: String, _ sn: String) {
   let fullname = fn + " " + sn
   print("Hi there \(fullname)")
 }
+```
+###### Example 2: Function with External Parameter Names
+###### In this example, the function uses external parameter names "firstname" and "surname," which must be used when calling the function:
 
-// Example 2: Function with External Parameter Names
-// In this example, the function uses external parameter names "firstname" and "surname," which must be used when calling the function:
+```swift
 func hiThere(firstname fn: String, surname sn: String) {
   let fullname = fn + " " + sn
   print("Hi there \(fullname)")
 }
+```
+###### Example 3: Function with Default Parameter Values
+###### In this example, the "score" parameter has a default value of 0, which means we can call the function with or without providing a value for "score"
 
-// Example 3: Function with Default Parameter Values
-// In this example, the "score" parameter has a default value of 0, which means we can call the function with or without providing a value for "score":
+```swift
 func display(_ s1: String, _ s2: String, score: Int = 0) {
   let name_score = s1 + " " + s2 + " " + String(score)
   print("Hello \(name_score)")
 }
 
-
 ```
-
 
 #### Usages of Functions with inout Parameters
 
@@ -477,10 +478,9 @@ print("Player points: \(playerPoints)")
 
 
 #### Closures 
+###### Closures in Swift are self-contained blocks of code that can be assigned to variables or passed as arguments to functions. They are similar to functions but have a more concise syntax. Here's how closures are defined:
 
 ```swift
-
-//Closures in Swift are self-contained blocks of code that can be assigned to variables or passed as arguments to functions. They are similar to functions but have a more concise syntax. Here's how closures are defined:
 
 // Function:
 func functionName(argument list) -> ReturnType {
@@ -491,19 +491,27 @@ func functionName(argument list) -> ReturnType {
 { (argument list) -> ReturnType in
     Execute some code
 }
+```
+###### Closures are useful for tasks that require a block of code to be executed, such as sorting arrays, filtering data, or performing operations on collections. They can be particularly handy in scenarios where you need to define a short, inline piece of functionality without creating a separate function.
+######
+######
+###### Example 1
+######
+```swift
 
-//Closures are useful for tasks that require a block of code to be executed, such as sorting arrays, filtering data, or performing operations on collections. They can be particularly handy in scenarios where you need to define a short, inline piece of functionality without creating a separate function.
 
-
-// Example 
 // Using a closure to find the maximum of two numbers
 let maximum = { (num1: Int, num2: Int) -> Int in
     return num1 > num2 ? num1 : num2
 }
 print(maximum(1, 6)) // Output: 6
+```
 
+######
+###### Example 2
+######
 
-// Example 
+```swift
 
 let letters = ["B", "D", "A", "C"]
 // Sorting an array of strings using a closure
@@ -516,16 +524,15 @@ print(myCollection) // Output: ["A", "B", "D", "C"]
 let myCollection2 = letters.sorted(by: { $0 < $1 })
 print(myCollection2)  // Output: ["A", "B", "D", "C"]
 
-
-
 ```
 
 
 #### Swift Closure Example 
+######
+###### In this example, the variable waterBottles represents the amount of water bottles in a water dispenser, not gold bars. We have defined a closure named fillWaterDispenser. This closure takes an inout Int parameter called bottles, which means it can modify the value of bottles in its scope.
+######
 
 ```swift
-
-// In this example, the variable waterBottles represents the amount of water bottles in a water dispenser, not gold bars. We have defined a closure named fillWaterDispenser. This closure takes an inout Int parameter called bottles, which means it can modify the value of bottles in its scope.
 
 var waterBottles = 0
 let fillWaterDispenser = { (bottles: inout Int) in
@@ -533,18 +540,13 @@ let fillWaterDispenser = { (bottles: inout Int) in
 }
 fillWaterDispenser(&waterBottles)
 print(waterBottles)
-
-
-
 ```
 
 
 #### Swift Completion Handler Usage 
+###### Drinking Water Example
 
 ```swift
-
-
-// Drinking Water Example
 
 var waterBottle = 1000 // We have 1000 ml (1L) water in the bottle
 
@@ -561,26 +563,26 @@ print("You have (remainingWater) ml of water left.")
 }
 
 
-
 ```
 
 
 #### Different Closure Usage 
 
+
+###### Example 1: Basic Usage of Closure
+
+
 ```swift
-
-
-///Example 1: Basic Usage of Closure
-
 
 let sayHello = {
     print("Merhaba!")
 }
 
 sayHello() // Çıktı: Merhaba!
+```
+###### Example 2: Closure with Parameters and Return Value
 
-
-///Example 2: Closure with Parameters and Return Value
+```swift
 
 let multiply = { (a: Int, b: Int) -> Int in
     return a * b
@@ -588,10 +590,11 @@ let multiply = { (a: Int, b: Int) -> Int in
 
 let result = multiply(5, 3)
 print(result) // Çıktı: 15
+```
 
+###### Example 3: Passing a Closure as a Parameter to Another Function
 
-///Example 3: Passing a Closure as a Parameter to Another Function
-
+```swift
 
 func performOperation(a: Int, b: Int, operation: (Int, Int) -> Int) {
     let result = operation(a, b)
@@ -604,18 +607,20 @@ let addition = { (a: Int, b: Int) -> Int in
 
 performOperation(a: 5, b: 3, operation: addition) // Çıktı: Sonuç: 8
 
+```
 
-//Example 4: Closure Expression Shorthand
+###### Example 4: Closure Expression Shorthand
 
+```swift
 
 let numbers = [1, 2, 3, 4, 5]
 let squaredNumbers = numbers.map { $0 * $0 }
 print(squaredNumbers) // Çıktı: [1, 4, 9, 16, 25]
 
-
-// https://docs.swift.org/swift-book/documentation/the-swift-programming-language/closures/
-
 ```
+
+###### https://docs.swift.org/swift-book/documentation/the-swift-programming-language/closures/
+
 
 
 #### Struct
@@ -638,13 +643,15 @@ struct Vehicle {
 var newVehicle = Vehicle(color: "blue", name: "Car 1", topSpeed: 100, mileage: 5000)
 newVehicle.drive()
 print("The color of the vehicle is \(newVehicle.color).")
+```
 
 
-// Explanation of "mutating" Keyword
-//The `mutating` keyword is used in a structure or class method to allow the method to modify the properties of the structure or class. By default, a method in a structure or class is not allowed to modify the properties; it can only read them. However, by marking a method with the `mutating` keyword, you can enable the method to modify the properties.
+###### Explanation of "mutating" Keyword
+###### The `mutating` keyword is used in a structure or class method to allow the method to modify the properties of the structure or class. By default, a method in a structure or class is not allowed to modify the properties; it can only read them. However, by marking a method with the `mutating` keyword, you can enable the method to modify the properties.
+######
+###### Example 1: Using the "mutating" keyword in a structure
 
-// Example 1: Using the "mutating" keyword in a structure
-
+```swift
 struct Point {
     var x: Int
     var y: Int
@@ -659,8 +666,11 @@ var point = Point(x: 10, y: 20)
 point.moveByX(5, y: 10)
 print(point) // Output: Point(x: 15, y: 30)
 
+```
 
-// Example 2: Using the "mutating" keyword in a structure
+###### Example 2: Using the "mutating" keyword in a structure
+
+```swift
 
 struct TableReservation {
     var name: String
@@ -705,12 +715,11 @@ print(file.fullFileName)
 ```
 
 
-#### Class Example : Virtual Food Order System
- 
+#### Class Example: Virtual Food Order System
+###### Virtual Food Order System
+###### A virtual system that allows users to order meals and track calorie intake for breakfast, lunch, and dinner.
 
 ```swift
-// Virtual Food Order System
-// A virtual system that allows users to order meals and track calorie intake for breakfast, lunch, and dinner.
 
 class VirtualFoodOrderSystem {
     var selectedMeal = ""

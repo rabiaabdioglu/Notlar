@@ -1,9 +1,24 @@
-
-
-##  Programming Fundamentals Swift #
-- [Swift Basics](#Swift-Basics)
-
-
+## Programming Fundamentals in Swift
+- [Swift Basics](#swift-basics)
+  - [Swift Variable Examples](#swift-variable-examples)
+  - [String Operations and Manipulation](#string-operations-and-manipulation)
+  - [Control Flow](#control-flow)
+  - [Loops](#loops)
+  - [Loop Control with Conditional Statements](#loop-control-with-conditional-statements)
+  - [Simple Authentication System Example](#simple-authentication-system-example)
+  - [Array Usage in Swift](#array-usage-in-swift)
+  - [Swift Tuple and Validation Examples](#swift-tuple-and-validation-examples)
+  - [Swift Dictionary Example](#swift-dictionary-example)
+  - [Swift Function Example](#swift-function-example)
+  - [Different Usages of Functions](#different-usages-of-functions)
+  - [Usages of Functions with inout Parameters](#usages-of-functions-with-inout-parameters)
+  - [Closures](#closures)
+  - [Swift Closure Example](#swift-closure-example)
+  - [Swift Completion Handler Usage](#swift-completion-handler-usage)
+  - [Different Closure Usage](#different-closure-usage)
+  - [Struct](#struct)
+  - [Class](#class)
+  - [Class Example: Virtual Food Order System](#class-example-virtual-food-order-system)
 
 
 
@@ -32,7 +47,7 @@ print("The average temperature this week is \(morningTemperature)°F")
 
 
 ```
-## Usage of Variables and Type Casting
+#### Usage of Variables and Type Casting
 
 
 
@@ -72,7 +87,7 @@ print("The average score for each level is \(averageScoreDouble).")
 ```
 
 
-## String Operations and Manipulation
+#### String Operations and Manipulation
 
 ```swift
 
@@ -102,7 +117,7 @@ print("The abbreviation has \(shortToday.count) characters.")
 
 ```
 
-## Control Flow 
+#### Control Flow 
 
 
 ```swift
@@ -150,7 +165,7 @@ switch userRole {
 ```
 
 
-## Loops
+#### Loops
 
 ```swift
 // For loop to roll a dice 6 times
@@ -184,7 +199,7 @@ print("You rolled a double \(thirdDice).")
 ```
 
 
-## Loop Control with Conditional Statements
+#### Loop Control with Conditional Statements
 
 ```swift
 
@@ -211,7 +226,7 @@ for currentLevel in 1...totalLevels {
 ```
 
 
-## Simple Authentication System Example
+#### Simple Authentication System Example
 
 ```swift
 
@@ -256,7 +271,7 @@ if enteredPin == pinCode {
 ```
 
 
-## Array Usage in Swift
+#### Array Usage in Swift
 
 ```swift
 
@@ -309,7 +324,7 @@ if studentGrades.isEmpty {
 ```
 
 
-## Swift Tuple and Validation Examples
+#### Swift Tuple and Validation Examples
 
 ```swift
 
@@ -330,7 +345,7 @@ if fullUserInfo.username == "" || fullUserInfo.password < 0 {
 ```
 
 
-## Swift Dictionary Example
+#### Swift Dictionary Example
 
 ```swift
 
@@ -368,7 +383,7 @@ print("Lowest calorie food: \(lowestCalorieFood), \(lowestCalories) calories.")
 ```
 
 
-## Swift Function Example
+#### Swift Function Example
 
 ```swift
 
@@ -395,7 +410,7 @@ print("Total calories for the day: \(totalCalories)")
 ```
 
 
-##  Different Usages of Functions 
+####  Different Usages of Functions 
 
 ```swift
 // Swift function examples with different parameter scenarios
@@ -425,7 +440,7 @@ func display(_ s1: String, _ s2: String, score: Int = 0) {
 ```
 
 
-## Usages of Functions with inout Parameters
+#### Usages of Functions with inout Parameters
 
 ```swift
 
@@ -457,7 +472,7 @@ print("Player points: \(playerPoints)")
 ```
 
 
-## Closures 
+#### Closures 
 
 ```swift
 
@@ -502,7 +517,7 @@ print(myCollection2)  // Output: ["A", "B", "D", "C"]
 ```
 
 
-## Swift Closure Example 
+#### Swift Closure Example 
 
 ```swift
 
@@ -520,7 +535,7 @@ print(waterBottles)
 ```
 
 
-## Swift Completion Handler Usage 
+#### Swift Completion Handler Usage 
 
 ```swift
 
@@ -546,7 +561,7 @@ print("You have (remainingWater) ml of water left.")
 ```
 
 
-## Different Closure Usage 
+#### Different Closure Usage 
 
 ```swift
 
@@ -599,7 +614,7 @@ print(squaredNumbers) // Çıktı: [1, 4, 9, 16, 25]
 ```
 
 
-## Struct
+#### Struct
  
 
 ```swift
@@ -660,7 +675,7 @@ print(johnBooking)
 ```
 
 
-## Class
+#### Class
  
 
 ```swift
@@ -686,7 +701,7 @@ print(file.fullFileName)
 ```
 
 
-## Class Example : Virtual Food Order System
+#### Class Example : Virtual Food Order System
  
 
 ```swift
@@ -796,7 +811,15 @@ repeat {
 ```
 
 
-## Class
+#### State and Binding
+ 
+
+```swift
+
+```
+
+
+#### Observable and Observed
  
 
 ```swift

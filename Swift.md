@@ -19,6 +19,10 @@
   - [Struct](#struct)
   - [Class](#class)
   - [Class Example: Virtual Food Order System](#class-example-virtual-food-order-system)
+- [SwiftUI Basics](#swiftui-basics)
+  - [State And Binding](#state-and-binding)
+  - [Observable And Observed](#observable-and-observed)
+
 
 
 
@@ -811,15 +815,112 @@ repeat {
 ```
 
 
+
+## SwiftUI Basics
+
 #### State and Binding
- 
+
+>>      State and Binding are known as property wrappers and are used with interface elements to control data display.
+>>      State and Binding work in pairs, inside SwiftUI views, in the form @State and @Binding. All SwiftUI views are structures, also known as structs. Once initialized, structs don't allow their internal variables to change. @State elements remove this restriction, allowing variables to be stored outside the structure itself in an area that can be changed. As a plus, they serve as control variables.
+
+>>      @Binding, on the other hand, is used to create variables that receive values from @State variables and are connected to them in a way that any change to a @Binding variable will change the bind @State variable.
+
 
 ```swift
+// ContentView is a SwiftUI view that holds the state variable changeColor.
+// When changeColor is true, it displays the ColorChangeView.
+struct ContentView: View {
+    @State var changeColor = true
+    
+    var body: some View {
+        VStack {
+            if changeColor {
+                // ColorChangeView is a subview that receives the @Binding property colorBinding,
+                // which is connected to the changeColor state variable.
+                ColorChangeView(colorBinding: $changeColor) // When colorBinding changes, changeColor will change too.
+            }
+        }
+    }
+}
+
+// ColorChangeView is a SwiftUI view that changes the color of an image based on the value of colorBinding.
+// It also provides a button to toggle the value of colorBinding.
+
+struct ColorChangeView: View {
+    @Binding var colorBinding: Bool
+    
+    var body: some View {
+        VStack {
+            // An image with systemName "swift" is displayed, and its color is determined by the value of colorBinding.
+            Image(systemName: "swift")
+                .resizable()
+                .frame(width: 100, height: 100)
+                .foregroundColor(colorBinding ? .red : .blue) // In this line, the color will be changed.
+            
+            // A button labeled "Toggle Color" is provided.
+            // When pressed, it will toggle the value of colorBinding, thereby changing the color of the image.
+            Button(action: {
+                colorBinding.toggle() // The colorBinding value will change when the button is pressed.
+            }, label: {
+                Text("Toggle Color")
+                    .font(.title2)
+            })
+        }
+    }
+}
 
 ```
 
-
 #### Observable and Observed
+
+
+>>      @ObservedObject and @Published are often used together in SwiftUI to achieve reactivity and data binding.  @ObservedObject is used to mark a property in a SwiftUI view that holds an ObservableObject. It allows the view to observe changes in the properties of that ObservableObject, triggering UI updates when changes occur.
+>>
+>>     On the other hand, @Published is a property wrapper used inside an ObservableObject. When applied to a property in a class or a structure, it automatically sends notifications to its observers whenever the property value changes. This enables SwiftUI views observing the @ObservedObject to update their UI when @Published properties change.  Together, @ObservedObject and @Published enable reactive data flow in SwiftUI, allowing views to automatically respond to changes in the underlying data and keeping the user interface synchronized with the data state.
+
+```swift
+
+import SwiftUI
+import Combine
+
+class ControlViewModel: ObservableObject {
+    @Published var isLogoVisible = true // This is the controlling variable that can be observed by SwiftUI views.
+}
+
+struct ContentView: View {
+    @ObservedObject var viewModel = ControlViewModel() // Create an instance of ControlViewModel to observe changes in isLogoVisible.
+
+    var body: some View {
+        VStack {
+            if viewModel.isLogoVisible {
+                ColorChangeView(viewModel: viewModel)
+            }
+        }
+    }
+}
+
+struct ColorChangeView: View {
+    @ObservedObject var viewModel: ControlViewModel // Receive the observed view model.
+
+    var body: some View {
+        VStack {
+            Image(systemName: "swift")
+                .resizable()
+                .frame(width: 100, height: 100)
+                .foregroundColor(viewModel.isLogoVisible ? .red : .blue)
+
+            Button(action: {
+                viewModel.isLogoVisible.toggle() // Toggle the value of isLogoVisible from the view model.
+            }, label: {
+                Text("Toggle Logo Visibility")
+                    .font(.title2)
+            })
+        }
+    }
+}
+```
+
+####  
  
 
 ```swift

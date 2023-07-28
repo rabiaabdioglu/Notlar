@@ -820,10 +820,10 @@ repeat {
 
 #### State and Binding
 
->>      State and Binding are known as property wrappers and are used with interface elements to control data display.
->>      State and Binding work in pairs, inside SwiftUI views, in the form @State and @Binding. All SwiftUI views are structures, also known as structs. Once initialized, structs don't allow their internal variables to change. @State elements remove this restriction, allowing variables to be stored outside the structure itself in an area that can be changed. As a plus, they serve as control variables.
+######      State and Binding are known as property wrappers and are used with interface elements to control data display.
+######      State and Binding work in pairs, inside SwiftUI views, in the form @State and @Binding. All SwiftUI views are structures, also known as structs. Once initialized, structs don't allow their internal variables to change. @State elements remove this restriction, allowing variables to be stored outside the structure itself in an area that can be changed. As a plus, they serve as control variables.
 
->>      @Binding, on the other hand, is used to create variables that receive values from @State variables and are connected to them in a way that any change to a @Binding variable will change the bind @State variable.
+######      @Binding, on the other hand, is used to create variables that receive values from @State variables and are connected to them in a way that any change to a @Binding variable will change the bind @State variable.
 
 
 ```swift
@@ -874,9 +874,9 @@ struct ColorChangeView: View {
 #### Observable and Observed
 
 
->>      @ObservedObject and @Published are often used together in SwiftUI to achieve reactivity and data binding.  @ObservedObject is used to mark a property in a SwiftUI view that holds an ObservableObject. It allows the view to observe changes in the properties of that ObservableObject, triggering UI updates when changes occur.
->>
->>     On the other hand, @Published is a property wrapper used inside an ObservableObject. When applied to a property in a class or a structure, it automatically sends notifications to its observers whenever the property value changes. This enables SwiftUI views observing the @ObservedObject to update their UI when @Published properties change.  Together, @ObservedObject and @Published enable reactive data flow in SwiftUI, allowing views to automatically respond to changes in the underlying data and keeping the user interface synchronized with the data state.
+######      @ObservedObject and @Published are often used together in SwiftUI to achieve reactivity and data binding.  @ObservedObject is used to mark a property in a SwiftUI view that holds an ObservableObject. It allows the view to observe changes in the properties of that ObservableObject, triggering UI updates when changes occur.
+######
+######     On the other hand, @Published is a property wrapper used inside an ObservableObject. When applied to a property in a class or a structure, it automatically sends notifications to its observers whenever the property value changes. This enables SwiftUI views observing the @ObservedObject to update their UI when @Published properties change.  Together, @ObservedObject and @Published enable reactive data flow in SwiftUI, allowing views to automatically respond to changes in the underlying data and keeping the user interface synchronized with the data state.
 
 ```swift
 

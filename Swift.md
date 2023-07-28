@@ -22,7 +22,7 @@
 - [SwiftUI Basics](#swiftui-basics)
   - [State And Binding](#state-and-binding)
   - [Observable And Observed](#observable-and-observed)
-
+  - [State And Event Handling](#state-and-event-handling)
 
 
 
@@ -929,7 +929,34 @@ struct ColorChangeView: View {
 }
 ```
 
-####  
+####  State and Event Handling
  
 
 ```swift
+import SwiftUI
+
+struct SearchUserForm: View { 
+    @State var userName:String = "" 
+    var body: some View {  
+        Form {
+            TextField("Type User Name", 
+                text:$userName, 
+                onEditingChanged: { status in 
+                    print(status) 
+                }) 
+            .onSubmit({ 
+                print("searching..") 
+            }) 
+            .onChange(of: userName, perform: { newValue in 
+                print(newValue)
+            }) 
+
+        }
+        .padding() 
+    } 
+} 
+
+```
+
+####  
+ 
